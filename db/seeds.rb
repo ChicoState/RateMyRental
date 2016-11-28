@@ -78,13 +78,13 @@ reviews = Review.create(
 
 images = Image.create(
 [
-      { filename: "h01.jpg", default: true, rental_id: 1 },
-      { filename: "h02.jpg", default: false, rental_id: 1 },
-      { filename: "h03.jpg", default: false, rental_id: 1 },
-      { filename: "h04.jpg", default: false, rental_id: 1 },
-      { filename: "h05.jpg", default: true, rental_id: 2 },
-      { filename: "h06.jpg", default: false, rental_id: 2 },
-      { filename: "h07.jpg", default: false, rental_id: 2 },
-      { filename: "h08.jpg", default: true, rental_id: 3 },
-      { filename: "h09.jpg", default: false, rental_id: 3 }
+      { filename: "h01.jpg", pic_file_name: "h01.jpg", default: true, rental_id: 1 },
+      { filename: "h01.jpg", pic_file_name: "h02.jpg", default: false, rental_id: 1 },
+      { filename: "h01.jpg", pic_file_name: "h03.jpg", default: false, rental_id: 1 },
+      { filename: "h01.jpg", pic_file_name: "h04.jpg", default: false, rental_id: 1 },
+      { filename: "h01.jpg", pic_file_name: "h05.jpg", default: true, rental_id: 2 },
+      { filename: "h01.jpg", pic_file_name: "h06.jpg", default: false, rental_id: 2 },
+      { filename: "h01.jpg", pic_file_name: "h07.jpg", default: false, rental_id: 2 },
+      { filename: "h01.jpg", pic_file_name: "h08.jpg", default: true, rental_id: 3 },
+      { filename: "h01.jpg", pic_file_name: "h09.jpg", default: false, rental_id: 3 }
 ])
