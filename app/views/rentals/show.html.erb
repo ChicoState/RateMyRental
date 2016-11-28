@@ -74,9 +74,10 @@
 		<% @num_reviews = @num_reviews + 1 %>
 	<% end %>
 <% end %>
-<% @avg_price = @total_price / @num_reviews %>
-
-<% @avg_stars = @total_stars / @num_reviews %>
+<% if @num_reviews != 0 %>
+  <% @avg_price = @total_price / @num_reviews %>
+  <% @avg_stars = @total_stars / @num_reviews %>
+<% end %>
 <!-- RENTAL DETAILS -->
 <div class="row">
 	<div class="small-6 columns">
@@ -242,7 +243,7 @@
 			<% @rental.images.each do |image| %>
 				<% if !image.new_record? %>
 					<div class="item">
-						<%= image_tag (root_url + "/images/" + image.filename) %>
+						<%= image_tag (root_url + "/images/" + image.pic_file_name) %>
 					</div>
 				<% end %>
 			<% end %>
