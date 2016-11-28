@@ -79,3 +79,6 @@ gem 'owlcarousel-rails'
 
 # gem for pagination
 gem 'kaminari'
+
+# gem for multi images
+gem 'paperclip'

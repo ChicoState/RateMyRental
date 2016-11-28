@@ -2,6 +2,12 @@ class Rental < ActiveRecord::Base
 	has_many :reviews, dependent: :destroy
 	has_many :images, dependent: :destroy
 
+  def images_array=(array)
+    array.each do |file|
+      images.build.(:image => file)
+    end
+  end
+
 	geocoded_by :full_address
 	#after_validation :geocode
 
