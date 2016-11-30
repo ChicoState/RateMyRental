@@ -292,7 +292,7 @@
 	</div>
 <% end %>
 <!-- REVIEWS -->
-<% @rental.reviews.each do |review| %>
+<% @rental.reviews.reverse_each do |review| %>
 	<% if review.overall.present? %>
 		<div class="row">
 		<ul class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
