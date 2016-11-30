@@ -41,13 +41,12 @@ gem 'binding_of_caller', group: :development
 # gem 'bcrypt', '~> 3.1.7'
 
 # Development and Testing Gems
-group :development, :test do
-  gem 'rspec-rails'
-end
+
 
 # Needed for testing
 group :test do
   gem 'rake'
+ gem 'faker'
 end
 
 # Code coverage implementation
@@ -62,6 +61,8 @@ gem 'simplecov', :require => false, :group => :test
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
 end
 
 group :development do

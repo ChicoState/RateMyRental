@@ -15,13 +15,6 @@ RSpec.describe RentalsController, :type => :controller do
       get :index
       expect(response).to render_template("index")
     end
-
-    # it 'loads all of the rentals into @rentals' do
-    #   rental1, rental2 = Rental.create!, Rental.create!
-    #   get :index
-    #
-    #   expect(assigns(:rental)).to match_array([rental1, rental2])
-    # end
   end
 
   describe 'GET #new rentals ' do
@@ -42,11 +35,90 @@ RSpec.describe RentalsController, :type => :controller do
 
     context 'creates the correct objects' do
       it 'creates a new review object' do
-        expect(review).to be_a_new(Review)
+	u = FactoryGirl.build :rental
+        expect(u.reviews.new).to be_a_new(Review)
       end
     end
   end
 
+  describe "POST #create" do
+    context "with valid attributes" do
+      it "create new rental" do
+	#Rental.delete_all
+	u = FactoryGirl.build :rental
+        post :create, rental: u.attributes
+        expect(Rental.count).to eq(1)
+      end
+    end
+    context "with unvalid attributes" do
+      it "fail to create new rental" do
+	#Rental.delete_all
+	u = FactoryGirl.build :rental_invalid
+	post :create, rental: u.attributes
+        expect(response).to render_template(:new)
+	end
+    end
 
+  end
+
+  describe "PUT #update" do
+    #Rental.delete_all
+    let(:valid) do
+      { :addr_street_num => 1000}
+    end
+    let(:invalid) do {:addr_full_adress => nil} end
+    it 'update should redirect to rental page' do
+      u = FactoryGirl.create :rental
+      put :update, :id => u.id, :rental => valid
+      u.reload
+      expect(response).to redirect_to(u)
+    end
+
+    it 'should update rental' do
+      u = FactoryGirl.create :rental
+      put :update, id: u.id, rental: valid
+      u.reload
+      expect(u.addr_street_num).to eql valid[:addr_street_num]
+
+      
+
+    end
+    it 'should fail updating rental' do
+      u = FactoryGirl.create :rental
+      put :update, :id => u.id, :rental => invalid
+      u.reload
+      expect(response).to render_template(:edit)
+    end
+  end
+
+  describe 'DELETE #destroy' do
+    it "deletes the rental" do
+      u = FactoryGirl.create(:rental)
+      expect{
+        delete :destroy, :id => u.id
+      }.to change{Rental.count}.by(-1)
+    end
+    it "redirects to rentals#index" do
+      u = FactoryGirl.create(:rental)
+      delete :destroy, :id => u.id
+      expect(response).to redirect_to(rentals_url)
+    end
+  end
+
+  describe 'GET #show rentals' do
+    it "redirects to rentals#show" do
+      u = FactoryGirl.create(:rental)
+      get :show, :id => u
+      expect(response).to render_template(:show)
+    end
+    it 'creates a new review object' do
+	u = FactoryGirl.build :rental
+        expect(u.reviews.new).to be_a_new(Review)
+    end
+    it 'creates a new image object' do
+	u = FactoryGirl.build :rental
+        expect(u.images.new).to be_a_new(Image)
+    end
+  end
 
 end
