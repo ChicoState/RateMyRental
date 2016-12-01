@@ -50,7 +50,7 @@ RSpec.describe RentalsController, :type => :controller do
         expect(Rental.count).to eq(1)
       end
     end
-    context "with unvalid attributes" do
+    context "with invalid attributes" do
       it "fail to create new rental" do
 	#Rental.delete_all
 	u = FactoryGirl.build :rental_invalid
