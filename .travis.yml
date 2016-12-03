@@ -1,7 +1,17 @@
 # This is for automatic testing on Travis CI.
 # Similar to Jenkins but it is hosted by Travis and
 # students get this free.
-
 language: ruby
 rvm:
   - 2.3.0
+
+notifications:
+  slack:
+    on_success: always
+    on_failure: always
+
+  email:
+    recipients:
+      - jbankes@mail.csuchico.edu
+    on_success: change
+    on_failure: always
