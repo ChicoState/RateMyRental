@@ -12,7 +12,7 @@
 		<%= csrf_meta_tags %>
 	</head>
 
-	<body>
+	<body onload="main()">
 		<!-- renders the generated header -->
 		<% #= render 'layouts/header' %>
 		<%= yield %>

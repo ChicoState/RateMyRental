@@ -74,7 +74,7 @@
     <% @rentals.each do |rental| %>
     	<div id="rental_div">
           <%= link_to rental do %>
-	        <div id="rental_image">
+	        <div id="rental_image" data-turbolinks="false">
     	        <% rental.images.each do |image| %>
   	  	        	<% if image.default == true %>
                     	<%= image_tag(image.filename, :class=>"thumbnail", size:"250") %>
