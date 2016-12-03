@@ -44,17 +44,23 @@
   </div>
 </div>
 <br>
+<br>
+
 <!-- SEARCH BAR -->
 <div id="search_back">
 	<div id="search_bar" class="row">
 		<div id="search_bar" class="small-12 small-center columns">
-			<div id="search_bar"class="SearchBar">
-	    		<%= form_for_filterrific @filterrific, :url => search_show_path do |f| %>
-	    			<div>
-	        			<%= f.text_field( :search_query, placeholder: "Search - ex: 12 disney way") %>
-	    			</div>
-	    		<% end %>
-			</div>
+    		<%= form_for_filterrific @filterrific, :url => search_show_path do |f| %>
+        <div>
+        		<div class="query_bar">
+        			<%# give the search field the 'filterrific-periodically-observed' class for live updates %>
+            		<%= f.text_field(:search_query, class: 'filterrific-periodically-observed') %>
+        		</div>
+        		<div class="text-center">
+            		<%= f.submit 'Search', :class=>"search_button" %>
+        		</div>
+    </div>
+    		<% end %>
 		</div>
 	</div>
 </div>
@@ -66,27 +72,58 @@
 <div id="rental_listings_div">
 <br>
     <% @rentals.each do |rental| %>
-    	<div id="rental_div" class="row">
-		<div class="small-12 small-center columns">
-			<div id="rental_default_image_div" data-turbolinks="false">
-        		<% rental.images.each do |image| %>
-          			<% if image.default == true %>
-					<%= link_to (image_tag (root_url + "/images/" + image.filename), alt: image.filename), rental %> 	
-          			<%end%>
-        		<%end%>
-			</div>
+    	<div id="rental_div">
+          <%= link_to rental do %>
+	        <div id="rental_image">
+    	        <% rental.images.each do |image| %>
+  	  	        	<% if image.default == true %>
+                    	<%= image_tag(image.filename, :class=>"thumbnail", size:"250") %>
+                    <% end %>
+                 <% end %>
+             </div>			
 			<div id="addr_and_rating_div">
-				<ul>
-        			<li><%= rental.addr_full_adress %></li>
-					<li><b> Rating </b></li>
-				</ul>
-			</div>
-			<div id="details_div">
-				<ul>
-					<li><%= rental.dets_beds %> Bed </li>
-        			<li><%= rental.dets_baths %> Bath </li>
-					<li><b> Price </b></li>
-				</ul>
+                        <b><%= rental.addr_full_adress %></b>
+                        <br>
+                        <%= rental.dets_beds %> Bed | <%= rental.dets_baths %> Bath
+                        <!-- Calculate the Avg Number of Overall Stars and Price -->
+                        <% @total_price = 0 %>
+                        <% @total_stars = 0 %>
+                        <% @num_reviews = 0 %>
+                        <% rental.reviews.each do |review| %>
+                            <% if !review.new_record? && review.price.present? && review.overall.present? %>
+                                <% @total_price = review.price + @total_price %>
+                                <% @total_stars = review.overall + @total_stars %>
+                                <% @num_reviews = @num_reviews + 1 %>
+                            <% end %>
+                        <% end %>
+                        <% @avg_price = @total_price / @num_reviews %>
+                        <% @avg_stars = @total_stars / @num_reviews %>  
+                        <br>
+                        <% case @avg_price %>
+                             <% when 1 %>
+                                $
+                             <% when 2 %>
+                                $$
+                             <% when 3 %>
+                                $$$
+                             <% when 4 %>
+                                $$$$
+                             <% when 5 %>
+                                $$$$$
+                       <% end %>
+                       <br>
+                       <% case @avg_stars %>
+                            <% when 1 %>
+                                ★
+                            <% when 2 %>
+                                ★★
+                            <% when 3 %>
+                                ★★★
+                            <% when 4 %>
+                                ★★★★
+                            <% when 5 %>
+                                ★★★★★
+                        <% end %>
 			</div>
 			<div id="ammed_div">
 				<ul>
@@ -120,8 +157,8 @@
 				</ul>
 			</div>	
 		</div>
-		</div>
 		<br>
+	  <% end %>
     <% end %>
 </div>
 <!-- MISSION STATEMENT & FOOTER -->
