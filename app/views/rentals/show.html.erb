@@ -325,12 +325,12 @@
 					</div>
 					<div id="rating_comment" style="vertical-align:top; margin-left:30px;" >
 						<p> <blockquote>
-							<i id="comment_heading">Comment:</i><br>
+							<i id="comment_heading">Review:</i><br>
 							<div id="actual_comment"><%=review.comment%></div>
 						</blockquote> </p>
 					</div>
 					<br>
-					<% if current_user.email == "admin@admin.com" %>
+					<% if user_signed_in? && current_user.email == "admin@admin.com" %>
 					  <%= link_to 'Edit', edit_review_path(review) %>
 					  <%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %>
 					<% end %>
