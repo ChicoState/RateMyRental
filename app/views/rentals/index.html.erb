@@ -74,95 +74,94 @@
     <% @rentals.each do |rental| %>
     	<div id="rental_div">
           <%= link_to rental do %>
-	    <div id="rental_image">
-    	      <% rental.images.each do |image| %>
-  	       	<% if image.default == true %>
-                  <%= image_tag(image.filename, :class=>"thumbnail", size:"250") %>
-                <% end %>
-              <% end %>
-            </div>			
-	    <div id="addr_and_rating_div">
-	      <h4><%= rental.full_address + ", " + rental.addr_state %></h4>
-	      <h5><%= rental.dets_beds %> Bed | <%= rental.dets_baths %> Bath </h5>
-              <!-- Calculate the Avg Number of Overall Stars and Price -->
-              <% @total_price = 0 %>
-              <% @total_stars = 0 %>
-              <% @num_reviews = 0 %>
-              <% rental.reviews.each do |review| %>
-                <% if !review.new_record? && review.price.present? && review.overall.present? %>
-                  <% @total_price = review.price + @total_price %>
-                  <% @total_stars = review.overall + @total_stars %>
-                  <% @num_reviews = @num_reviews + 1 %>
-                <% end %>
-              <% end %>
-	      <% if @num_reviews != 0 %>
-                <% @avg_price = @total_price / @num_reviews %>
-                <% @avg_stars = @total_stars / @num_reviews %>  
-	      <% end %>
-	      <br>
-	      <h5>
-              <% case @avg_price %>
-                <% when 1 %>
-                  $
-                <% when 2 %>
-                  $$
-                <% when 3 %>
-                  $$$
-                <% when 4 %>
-                  $$$$
-                <% when 5 %>
-                  $$$$$
-                <% end %>
-                <br>
-                <% case @avg_stars %>
-                  <% when 1 %>
-                    ★
-                  <% when 2 %>
-                    ★★
-                  <% when 3 %>
-                    ★★★
-                  <% when 4 %>
-                    ★★★★
-                  <% when 5 %>
-                    ★★★★★
-                <% end %>
-		<h5>
-	      </div>
-	      <div id="ammed_div">
-	        <ul>
-	          <% if(rental.amen_parking) %>
-		    <li>Parking on site</li>
-		  <% end %>
-                  <% if(rental.amen_pets) %>
-                    <li>Pets allowed</li>     
-                  <% end %> 
-                  <% if(rental.amen_washer_dryer) %>
-                    <li>Washer & Dryer</li>     
-                  <% end %> 
-                  <% if(rental.amen_pool) %>
-                    <li>Pool</li>     
-                  <% end %> 	
-                  <% if(rental.amen_spa) %>
-                    <li>Spa</li>     
-                  <% end %> 
-                  <% if(rental.amen_gym) %>
-                    <li>Gym</li>     
-                  <% end %> 
-                  <% if(rental.amen_dishwasher) %>
-                    <li>Dishwasher</li>     
-                  <% end %> 	
-                  <% if(rental.amen_central_air) %>
-                    <li>Central Air</li>     
-                  <% end %> 
-                  <% if(rental.amen_heater) %>
-                    <li>Heater</li>     
-                  <% end %> 
-		</ul>
-	      </div>	
-            </div>
-	    <br>
-	 <% end %>
-       <% end %>
+	        <div id="rental_image" data-turbolinks="false">
+    	        <% rental.images.each do |image| %>
+  	  	        	<% if image.default == true %>
+                    	<%= image_tag(image.filename, :class=>"thumbnail", size:"250") %>
+                    <% end %>
+                 <% end %>
+             </div>			
+			<div id="addr_and_rating_div">
+                        <b><%= rental.addr_full_adress %></b>
+                        <br>
+                        <%= rental.dets_beds %> Bed | <%= rental.dets_baths %> Bath
+                        <!-- Calculate the Avg Number of Overall Stars and Price -->
+                        <% @total_price = 0 %>
+                        <% @total_stars = 0 %>
+                        <% @num_reviews = 0 %>
+                        <% rental.reviews.each do |review| %>
+                            <% if !review.new_record? && review.price.present? && review.overall.present? %>
+                                <% @total_price = review.price + @total_price %>
+                                <% @total_stars = review.overall + @total_stars %>
+                                <% @num_reviews = @num_reviews + 1 %>
+                            <% end %>
+                        <% end %>
+			<% if @num_reviews != 0 %>
+                          <% @avg_price = @total_price / @num_reviews %>
+                          <% @avg_stars = @total_stars / @num_reviews %>  
+		        <% end %>
+                        <br>
+                        <% case @avg_price %>
+                             <% when 1 %>
+                                $
+                             <% when 2 %>
+                                $$
+                             <% when 3 %>
+                                $$$
+                             <% when 4 %>
+                                $$$$
+                             <% when 5 %>
+                                $$$$$
+                       <% end %>
+                       <br>
+                       <% case @avg_stars %>
+                            <% when 1 %>
+                                ★
+                            <% when 2 %>
+                                ★★
+                            <% when 3 %>
+                                ★★★
+                            <% when 4 %>
+                                ★★★★
+                            <% when 5 %>
+                                ★★★★★
+                        <% end %>
+			</div>
+			<div id="ammed_div">
+				<ul>
+					<%if(rental.amen_parking)%>
+						<li>Parking on site</li>
+					<%end%>
+                    <%if(rental.amen_pets)%>
+                        <li>Pets allowed</li>     
+                    <%end%> 
+                    <%if(rental.amen_washer_dryer)%>
+                        <li>Washer & Dryer</li>     
+                    <%end%> 
+                    <%if(rental.amen_pool)%>
+                        <li>Pool</li>     
+                    <%end%> 	
+                    <%if(rental.amen_spa)%>
+                        <li>Spa</li>     
+                    <%end%> 
+                    <%if(rental.amen_gym)%>
+                        <li>Gym</li>     
+                    <%end%> 
+                    <%if(rental.amen_dishwasher)%>
+                        <li>Dishwasher</li>     
+                    <%end%> 	
+                    <%if(rental.amen_central_air)%>
+                        <li>Central Air</li>     
+                    <%end%> 
+                    <%if(rental.amen_heater)%>
+                        <li>Heater</li>     
+                    <%end%> 
+				</ul>
+			</div>	
+		</div>
+		<br>
+	  <% end %>
+    <% end %>
 </div>
 <!-- MISSION STATEMENT & FOOTER -->
 <div id="footer" data-sticky-container>
