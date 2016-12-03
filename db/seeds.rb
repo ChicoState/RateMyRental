@@ -60,6 +60,7 @@ rentals = Rental.create(
     { addr_full_adress: "14 Klondike Ct Chico CA 95926", addr_street_name: "Klondike Ct", addr_street_num: "14", addr_zip: "95926", addr_city: "Chico", addr_state: "CA", dets_beds: 4, dets_baths: 2, dets_is_complex: true, dets_stories: 1, dets_company_owned: false, dets_owner: "John Doe", amen_parking: true, amen_pets: true, amen_washer_dryer: true , amen_pool: true, amen_spa: false, amen_gym: false, amen_dishwasher: true, amen_central_air: false, amen_heater: false, util_gas: false, util_electricity: false, util_trash: true, util_water: true, util_tv: true, util_wifi: false },
 
     { addr_full_adress: "1133 W Sacramento Ave Chico CA 95926", addr_street_name: "W Sacramento Ave", addr_street_num: "1133", addr_zip: "95926", addr_city: "Chico", addr_state: "CA", dets_beds: 2, dets_baths: 1, dets_is_complex: false, dets_stories: 1, dets_company_owned: true, dets_owner: "John Doe", amen_parking: false, amen_pets: true, amen_washer_dryer: true , amen_pool: false, amen_spa: false, amen_gym: false, amen_dishwasher: true, amen_central_air: false, amen_heater: true, util_gas: false, util_electricity: true, util_trash: true, util_water: true, util_tv: false, util_wifi: true }
+
   ])
 
 reviews = Review.create(
