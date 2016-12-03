@@ -24,6 +24,7 @@ Rate My Rental is an apartment rating web application
  * `rails g foundation:install
 
 # Usage
+* `bundle exec rspec `run all the tests
 * `rails s -b 0.0.0.0` while in the project directory will run the application on http://localhost:3000
 * How to seed database
   - `rake db:drop`   drop current database

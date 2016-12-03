@@ -6,7 +6,7 @@ rvm:
   - 2.3.0
 
 notifications:
-  slack: ratemyrental
+  slack:
     on_success: always
     on_failure: always
 

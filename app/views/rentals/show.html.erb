@@ -90,131 +90,246 @@
 				<% end %>
 		</h2>
 	<br>
-		<table>
-			<tr>
-				<th> Details </th>
-				<th> Amenities </th>
-				<th> Utilities </th>
-			</tr>
-			<tr>
-				<% if( @rental.dets_is_complex ) %>
-					<td> <b>Complex</b> </td>
-				<% else %>
-					<td> <strike>Complex</strike> </td>
-				<% end %>
-                <% if( @rental.amen_parking ) %>
-                    <td> <b>Reserved Parking</b> </td>
-                <% else %>
-                    <td><strike> Reserved Parking</strike> </td>
-                <% end %> 
-                <% if( @rental.util_gas ) %>
-                    <td> <b>Gas</b> </td>
-                <% else %>
-                    <td><strike> Gas</strike> </td>
-                <% end %>
-			</tr>
-            <tr>
-                <td> <b>Stories: <%= @rental.dets_stories %></b> </td>
-                <% if( @rental.amen_pets ) %>
-                    <td> <b>Pets Allowed</b> </td>
-                <% else %>
-                    <td><strike> Pets Allowed</strike> </td>
-                <% end %> 
-                <% if( @rental.util_electricity ) %>
-                    <td> <b>Electricity</b> </td>
-                <% else %>
-                    <td><strike> Electricity</strike> </td>
-                <% end %>
-            </tr>
-            <tr>
-                <% if( @rental.dets_company_owned ) %>
-                    <td> <b>Company Owned</b> </td>
-                <% else %>
-                    <td><strike> Company Owned</strike> </td>
-                <% end %>
-                <% if( @rental.amen_washer_dryer ) %>
-                    <td> <b>Washer & Dryer</b> </td>
-                <% else %>
-                    <td><strike> Washer & Dryer</strike> </td>
-                <% end %> 
-                <% if( @rental.util_trash ) %>
-                    <td> <b>Trash</b> </td>
-                <% else %>
-                    <td><strike> Trash</strike> </td>
-                <% end %>
-            </tr>
-            <tr>
-                <td> <b><%= @rental.dets_owner %></b> </td>
-                <% if( @rental.amen_pool ) %>
-                    <td> <b>Pool</b> </td>
-                <% else %>
-                    <td><strike> Pool</strike> </td>
-                <% end %> 
-                <% if( @rental.util_water ) %>
-                    <td> <b>Water</b> </td>
-                <% else %>
-                    <td><strike> Water</strike> </td>
-                <% end %>
-			</tr>
-			<tr>
-                <td>
-                    <!-- Distance from CSUC -->
-                    <% if @rental.geocoded? %>
-                        <b> Distance from CSUC: <%= @rental.distance_from([39.727900, -121.844173]).round(3) %> miles</b>
-                    <% end %>
-                </td>
-                <% if( @rental.amen_spa ) %>
-                    <td> <b>Spa</b> </td>
-                <% else %>
-                    <td><strike> Spa</strike> </td>
-                <% end %> 
-                <% if( @rental.util_tv ) %>
-                    <td> <b>Cable</b> </td>
-                <% else %>
-                    <td><strike> Cable</strike> </td>
-                <% end %>
-            </tr>
-            <tr>
-                <td></td>
-                <% if( @rental.amen_gym ) %>
-                    <td> <b>Gym</b> </td>
-                <% else %>
-                    <td><strike> Gym</strike> </td>
-                <% end %> 
-                <% if( @rental.util_wifi ) %>
-                    <td> <b>Wifi</b> </td>
-                <% else %>
-                    <td><strike> Wifi</strike> </td>
-                <% end %>
-            </tr>
-            <tr>
-                <td> </td>
-                <% if( @rental.amen_dishwasher ) %>
-                    <td> <b>Dishwasher</b> </td>
-                <% else %>
-                    <td><strike> Dishwasher</strike> </td>
-                <% end %> 
-                <td> </td>
-            </tr>
-            <tr>
-                <td> </td>
-                <% if( @rental.amen_central_air ) %>
-                    <td> <b>Central Air</b> </td>
-                <% else %>
-                    <td><strike> Central Air</strike> </td>
-                <% end %> 
-                <td> </td>
-            </tr>
-            <tr>
-                <td> </td>
-                <% if( @rental.amen_heater ) %>
-                    <td> <b>Heater</b> </td>
-                <% else %>
-                    <td><strike> Heater</strike> </td>
-                <% end %> 
-                <td> </td>
-            </tr>
-		</table>
+
+    <%-# Property Details Start -%>
+
+    <script type="text/javascript">
+        var toggle = [];
+        var start = 40;
+        var sm_offset = 30;
+        var lg_offset = 55;
+
+        function main() {
+          var rows = document.getElementsByClassName("icon_row");
+          closeRows();
+        }
+
+        function rowClick(id) {
+          var row = document.getElementById(id);
+          var icons = row.getElementsByClassName("icon");
+
+          closeRows();
+
+          for(var i = 1; i < icons.length; i++) {
+            icons[i].style.left = (start + (lg_offset * i)) + "px";
+          }
+
+          if(id == "details") {
+            toggle[0] = true;
+          } else if(id == "amenities") {
+            toggle[1] = true;
+          } else if(id == "utilities") {
+            toggle[2] = true;
+          }
+        }
+
+        function closeRows() {
+          var rows = document.getElementsByClassName("icon_row");
+          for(var i = 0; i < rows.length; i++) {
+            var row = rows[i];
+            var icons = row.getElementsByClassName("icon");
+            icons[0].style.left = start + "px";
+            for(var j = 1; j < icons.length; j++) {
+              icons[j].style.left = (start + (sm_offset * j)) + "px";
+            }
+            toggle[i] = false;
+          }
+        }
+
+        function showTooltip(id, row_number) {
+          if(toggle[row_number]) {
+            var amenity = document.getElementById(id);
+            var tooltip = amenity.getElementsByClassName("details_tooltip")[0];
+            tooltip.style.display = "block";
+          }
+        }
+
+        function hideTooltips() {
+          var tooltips = document.getElementsByClassName("details_tooltip");
+          for(var i = 0; i < tooltips.length; i++) {
+            tooltips[i].style.display = "none";
+          }
+        }
+
+    </script>
+
+    <div id="content_container">
+	    <div id="details_content">
+
+	    <div class="row_header">details</div>
+	    <div class="icon_row" id="details" onclick="rowClick(this.id)">
+	      <div class="icon detail" id="bedrooms"  onmouseover="showTooltip(this.id, 0)" onmouseout="hideTooltips()">
+		<%= image_tag (root_url + "/images/" + "bedroom_color.png") %>
+		<div class="details_tooltip"><%= @rental.dets_beds %> Bedrooms</div>
+	      </div>
+	      <div class="icon detail" id="bathrooms" onmouseover="showTooltip(this.id, 0)" onmouseout="hideTooltips()">
+		<%= image_tag (root_url + "/images/" + "bathroom_color.png") %>
+		<div class="details_tooltip"><%= @rental.dets_baths %> Bathrooms</div>
+	      </div>
+	      <div class="icon detail" id="complex"   onmouseover="showTooltip(this.id, 0)" onmouseout="hideTooltips()">
+		<% if(@rental.dets_is_complex) %>
+		    <%= image_tag (root_url + "/images/" + "complex_color.png") %>
+		    <div class="details_tooltip">Part of Complex Building</div>
+		<% else %>
+		    <%= image_tag (root_url + "/images/" + "complex_bw.png") %>
+		    <div class="details_tooltip">Not Part of Complex Building</div>
+		<% end %> 
+	      </div>
+	      <div class="icon detail" id="stories"   onmouseover="showTooltip(this.id, 0)" onmouseout="hideTooltips()">
+		<%= image_tag (root_url + "/images/" + "stories_color.png") %>
+		<div class="details_tooltip"><%= @rental.dets_stories %> Stories</div>
+	      </div>
+	      <div class="icon detail" id="company"   onmouseover="showTooltip(this.id, 0)" onmouseout="hideTooltips()">
+		<% if(@rental.dets_company_owned) %>
+		    <%= image_tag (root_url + "/images/" + "company_color.png") %>
+		    <div class="details_tooltip">Company Owned</div>
+		<% else %>
+		    <%= image_tag (root_url + "/images/" + "company_bw.png") %>
+		    <div class="details_tooltip">Not Company Owned</div>
+		<% end %> 
+	      </div>
+	    </div>
+
+	    <div class="row_header">amenities</div>
+	    <div class="icon_row" id="amenities" onclick="rowClick(this.id)">
+	      <div class="icon amenity" id="parking" onmouseover="showTooltip(this.id, 1)" onmouseout="hideTooltips()">
+		<% if(@rental.amen_parking) %>
+		    <%= image_tag (root_url + "/images/" + "parking_color.png") %>
+		    <div class="details_tooltip">Reserved Parking</div>
+		<% else %>
+		    <%= image_tag (root_url + "/images/" + "parking_bw.png") %>
+		    <div class="details_tooltip">No Reserved Parking</div>
+		<% end %> 
+	      </div>
+	      <div class="icon amenity" id="pets"    onmouseover="showTooltip(this.id, 1)" onmouseout="hideTooltips()">
+		<% if(@rental.amen_pets) %>
+		    <%= image_tag (root_url + "/images/" + "pets_color.png") %>
+		    <div class="details_tooltip">Pets Allowed</div>
+		<% else %>
+		    <%= image_tag (root_url + "/images/" + "pets_bw.png") %>
+		    <div class="details_tooltip">No Pets Allowed</div>
+		<% end %> 
+	      </div>
+	      <div class="icon amenity" id="laundry"  onmouseover="showTooltip(this.id, 1)" onmouseout="hideTooltips()">
+		<% if(@rental.amen_washer_dryer) %>
+		    <%= image_tag (root_url + "/images/" + "laundry_color.png") %>
+		    <div class="details_tooltip">Laundry On Site</div>
+		<% else %>
+		    <%= image_tag (root_url + "/images/" + "laundry_bw.png") %>
+		    <div class="details_tooltip">No Laundry On Site</div>
+		<% end %> 
+	      </div>
+	      <div class="icon amenity" id="pool"    onmouseover="showTooltip(this.id, 1)" onmouseout="hideTooltips()">
+		<% if(@rental.amen_pool) %>
+		    <%= image_tag (root_url + "/images/" + "pool_color.png") %>
+		    <div class="details_tooltip">Pool</div>
+		<% else %>
+		    <%= image_tag (root_url + "/images/" + "pool_bw.png") %>
+		    <div class="details_tooltip">No Pool</div>
+		<% end %> 
+	      </div>
+	      <div class="icon amenity" id="spa"     onmouseover="showTooltip(this.id, 1)" onmouseout="hideTooltips()">
+		<% if(@rental.amen_spa) %>
+		    <%= image_tag (root_url + "/images/" + "spa_color.png") %>
+		    <div class="details_tooltip">Spa</div>
+		<% else %>
+		    <%= image_tag (root_url + "/images/" + "spa_bw.png") %>
+		    <div class="details_tooltip">No Spa</div>
+		<% end %> 
+	      </div>
+	      <div class="icon amenity" id="gym"     onmouseover="showTooltip(this.id, 1)" onmouseout="hideTooltips()">
+		<% if(@rental.amen_gym) %>
+		    <%= image_tag (root_url + "/images/" + "gym_color.png") %>
+		    <div class="details_tooltip">Gym</div>
+		<% else %>
+		    <%= image_tag (root_url + "/images/" + "gym_bw.png") %>
+		    <div class="details_tooltip">No Gym</div>
+		<% end %> 
+	      </div>
+	      <div class="icon amenity" id="dish"    onmouseover="showTooltip(this.id, 1)" onmouseout="hideTooltips()">
+		<% if(@rental.amen_dishwasher) %>
+		    <%= image_tag (root_url + "/images/" + "dishwasher_color.png") %>
+		    <div class="details_tooltip">Dishwasher</div>
+		<% else %>
+		    <%= image_tag (root_url + "/images/" + "dishwasher_bw.png") %>
+		    <div class="details_tooltip">No Dishewasher</div>
+		<% end %> 
+	      </div>
+	      <div class="icon amenity" id="heat"    onmouseover="showTooltip(this.id, 1)" onmouseout="hideTooltips()">
+		<% if(@rental.amen_heater && @rental.amen_central_air) %>
+		    <%= image_tag (root_url + "/images/" + "heat_color.png") %>
+		    <div class="details_tooltip">Central Heating & Air</div>
+		<% else %>
+		    <%= image_tag (root_url + "/images/" + "heat_bw.png") %>
+		    <div class="details_tooltip">No Central Heating & Air</div>
+		<% end %> 
+	      </div>
+	    </div>
+
+	    <div class="row_header">utilities</div>
+	    <div class="icon_row" id="utilities" onclick="rowClick(this.id)">
+	      <div class="icon utility" id="gas"      onmouseover="showTooltip(this.id, 2)" onmouseout="hideTooltips()">
+		<% if(@rental.util_gas) %>
+		    <%= image_tag (root_url + "/images/" + "gas_color.png") %>
+		    <div class="details_tooltip">Gas Included in Rent</div>
+		<% else %>
+		    <%= image_tag (root_url + "/images/" + "gas_bw.png") %>
+		    <div class="details_tooltip">Gas Not Included in Rent</div>
+		<% end %> 
+	      </div>
+	      <div class="icon utility" id="electric" onmouseover="showTooltip(this.id, 2)" onmouseout="hideTooltips()">
+		<% if(@rental.util_electricity) %>
+		    <%= image_tag (root_url + "/images/" + "electric_color.png") %>
+		    <div class="details_tooltip">Electricity Included in Rent</div>
+		<% else %>
+		    <%= image_tag (root_url + "/images/" + "electric_bw.png") %>
+		    <div class="details_tooltip">Electricity Not Included in Rent</div>
+		<% end %> 
+	      </div>
+	      <div class="icon utility" id="trash"    onmouseover="showTooltip(this.id, 2)" onmouseout="hideTooltips()">
+		<% if(@rental.util_trash) %>
+		    <%= image_tag (root_url + "/images/" + "trash_color.png") %>
+		    <div class="details_tooltip">Trash Pickup Included in Rent</div>
+		<% else %>
+		    <%= image_tag (root_url + "/images/" + "trash_bw.png") %>
+		    <div class="details_tooltip">Trash Pickup Not Included in Rent</div>
+		<% end %> 
+	      </div>
+	      <div class="icon utility" id="water"    onmouseover="showTooltip(this.id, 2)" onmouseout="hideTooltips()">
+		<% if(@rental.util_water) %>
+		    <%= image_tag (root_url + "/images/" + "water_color.png") %>
+		    <div class="details_tooltip">Water Included in Rent</div>
+		<% else %>
+		    <%= image_tag (root_url + "/images/" + "water_bw.png") %>
+		    <div class="details_tooltip">Water Not Included in Rent</div>
+		<% end %> 
+	      </div>
+	      <div class="icon utility" id="tv"       onmouseover="showTooltip(this.id, 2)" onmouseout="hideTooltips()">
+		<% if(@rental.util_tv) %>
+		    <%= image_tag (root_url + "/images/" + "tv_color.png") %>
+		    <div class="details_tooltip">Cable Television Included in Rent</div>
+		<% else %>
+		    <%= image_tag (root_url + "/images/" + "tv_bw.png") %>
+		    <div class="details_tooltip">Cable Television Not Included in Rent</div>
+		<% end %> 
+	      </div>
+	      <div class="icon utility" id="internet" onmouseover="showTooltip(this.id, 2)" onmouseout="hideTooltips()">
+		<% if(@rental.util_wifi) %>
+		    <%= image_tag (root_url + "/images/" + "internet_color.png") %>
+		    <div class="details_tooltip">Internet Included in Rent</div>
+		<% else %>
+		    <%= image_tag (root_url + "/images/" + "internet_bw.png") %>
+		    <div class="details_tooltip">Internet Not Included in Rent</div>
+		<% end %> 
+	      </div>
+	    </div>
+
+    </div>
+    </div>
+
+    <%-# Property Details End -%>
+     <br><br>
+
 	</div>
 	<!-- RENTAL IMAGES -->
 	<div class="small-6 large-centered columns">
