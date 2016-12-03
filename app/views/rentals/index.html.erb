@@ -82,9 +82,12 @@
                  <% end %>
              </div>			
 			<div id="addr_and_rating_div">
-                        <b><%= rental.addr_full_adress %></b>
-                        <br>
-                        <%= rental.dets_beds %> Bed | <%= rental.dets_baths %> Bath
+			  <h5><%= rental.full_address + ", " + rental.addr_state %></h5>
+			<h6>
+                          <%= rental.dets_beds %> Bed | <%= rental.dets_baths %> Bath
+			</h6>
+			<br><br>
+			<h6>
                         <!-- Calculate the Avg Number of Overall Stars and Price -->
                         <% @total_price = 0 %>
                         <% @total_stars = 0 %>
@@ -100,7 +103,6 @@
                           <% @avg_price = @total_price / @num_reviews %>
                           <% @avg_stars = @total_stars / @num_reviews %>  
 		        <% end %>
-                        <br>
                         <% case @avg_price %>
                              <% when 1 %>
                                 $
@@ -113,7 +115,8 @@
                              <% when 5 %>
                                 $$$$$
                        <% end %>
-                       <br>
+	               </h6>
+		       <h6>
                        <% case @avg_stars %>
                             <% when 1 %>
                                 ★
@@ -126,6 +129,7 @@
                             <% when 5 %>
                                 ★★★★★
                         <% end %>
+			</h6>
 			</div>
 			<div id="ammed_div">
 				<ul>
