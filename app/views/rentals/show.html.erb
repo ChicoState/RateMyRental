@@ -18,7 +18,7 @@
 </div>
 <!-- ADD Modal -->
 <div class="reveal" id="add_modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-	<h3>Add a Rental</h3>
+	<h3>Edit Rental</h3>
   	<p class="lead" id="render_add_rental">
 	   <%= render 'rentals/form' %>
 	</p>
@@ -38,7 +38,7 @@
 		<a id="add_button" data-open="login_modal">LOGIN</a> &nbsp;
 	<% else %>
 		<%= link_to "LOGOUT", destroy_user_session_path,:style=>'color: white; background:#660033;', method: :delete, class: 'login_button' %>
-		<!-- <a id="add_button" data-open="add_modal">EDIT</a> -->
+    		<a id="add_button" data-open="add_modal">EDIT</a>
 	<% end %>
     </div>
   </div>
@@ -55,8 +55,8 @@
 	<% end %>
 <% end %>
 <% if @num_reviews != 0 %>
-<% @avg_price = @total_price / @num_reviews %>
-<% @avg_stars = @total_stars / @num_reviews %>
+  <% @avg_price = @total_price / @num_reviews %>
+  <% @avg_stars = @total_stars / @num_reviews %>
 <% end %>
 <!-- RENTAL DETAILS -->
 <div class="row">
@@ -76,7 +76,7 @@
 				<% end %>
 		</h4></b>
 		<h2 align="center">
-				<% case @avg_price %>
+				<% case @avg_stars %>
 				<% when 1 %>
 					★
 				<% when 2 %>
