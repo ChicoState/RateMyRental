@@ -175,12 +175,20 @@
   </tr>
   </tbody>
   </table>
-
-  <h3> Attach rental images</h3> 
-  <div>
-    <%= file_field_tag "pics[]", type: :file, multiple: true %>
+  <div id="files">
+    <h3> Attach rental images</h3> 
+      <!-- this is using html 5 magic to gather multiple images to pass to paperclip -->
+      <%= file_field_tag "pics[]", type: :file, multiple: true %>
   </div>
+
+  <div class="look_at_me"  onclick="select()" >
+  <!-- <div id="list" id="btnLeft"> -->
+    <output id="list"> </output>
+    <div id="name"> This is the name of the file selected </div>
+  </div>
+  <br>
   <div class="actions">
     <%= f.submit %>
   </div>
+
 <% end %>

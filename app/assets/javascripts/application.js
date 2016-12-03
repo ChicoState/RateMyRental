@@ -31,3 +31,51 @@ $(document).ready(function(){
 	});
 });
 
+
+// checking out script for previewing images 
+document.getElementById('files').addEventListener('change', handleFileSelect, false);
+
+function handleFileSelect(evt) {
+  var files = evt.target.files; // FileList object
+
+  // Loop through the FileList and render image files as thumbnails.
+  for (var i = 0, f; f = files[i]; i++) {
+
+    // Only process image files.
+    if (!f.type.match('image.*')) {
+      continue;
+    }
+
+    var reader = new FileReader();
+
+    // Closure to capture the file information.
+    reader.onload = (function(theFile) {
+      return function(e) {
+        // Render thumbnail.
+        var span = document.createElement('span');
+        span.innerHTML = ['<img class="thumb" id="image" src="', e.target.result,
+                           '" id="', theFile.name, '" alt="can_you_see_me" />'].join('');
+        document.getElementById('list').insertBefore(span, null);
+      };
+    })(f);
+
+    // Read in the image file as a data URL.
+    reader.readAsDataURL(f);
+  }
+}
+
+
+function select() {
+  // document.getElementByClassName("thumb").style.border = "thick solid green";
+
+  // XXX changes words on click but "unidentified"
+  // var x = document.activeElement.alt;
+  // document.getElementById("name").innerHTML = x;  
+
+  // XXX will select the first image because only can have first id
+  document.getElementById("image").style.border = "thick solid green";
+
+  // var v = document.getElementByClassName("thumb");
+  // var c = v[0].src;
+  // document.getElementById("name").innerHTML = c;  
+ }

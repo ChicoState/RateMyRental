@@ -36,6 +36,7 @@ class RentalsController < ApplicationController
     respond_to do |format|
       if @rental.save
 
+        # saving images with paperclip
         if params[:pics]
           params[:pics].each { |pic|
             @rental.images.create(pic: pic)
