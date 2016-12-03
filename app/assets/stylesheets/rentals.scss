@@ -49,15 +49,54 @@
 	width: 100%;
 	background: #f2f2f2;
 }
+#price_table {
+	width: 50%;
+	text-align: center;
+}
 #rating_title{
+	padding: 4%;
 	color:#660033;
+	font-weight: bold;
+	font-size: 1.5em;
+	float: left;
+	border: dashed white;
 }
 #review_title{
 	background:#660033;
 	color:white;
 }
 #review, #ratings_div{
+	float: left;
 	display: inline-block;
+}
+#rating_box {
+	width: 120%;
+}
+#rating_comment {
+	padding-left: 5%;
+	width: 70%;
+	max-height: 200px;
+	overflow: auto;
+	color: black;
+}
+#review_div {
+	height: 200px;
+}
+#comment_heading {
+	font-size: .8em;
+	color: #404040;
+}
+#actual_comment {
+	font-size: 1.1em;
+	color: #404040;
+}
+#rating_num {
+	font-weight: 900;
+	padding: 4%;
+	font-family: "Lucida Console", Monaco, monospace;
+	border: solid;
+	font-size: 2em;
+	float: left;
 }
 #top_bar {
 	background:#660033;

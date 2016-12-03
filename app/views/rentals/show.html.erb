@@ -292,37 +292,49 @@
 	</div>
 <% end %>
 <!-- REVIEWS -->
-<% @rental.reviews.each do |review| %>
+<% @rental.reviews.reverse_each do |review| %>
 	<% if review.overall.present? %>
 		<div class="row">
 		<ul class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
 	  	<li id="accordion_review"class="accordion-item" data-accordion-item>
 	    	<a href="#" class="accordion-title"><%= review.overall %> out of 5 stars</a>
 	    	<div class="accordion-content" data-tab-content>
+			<div id="review_div">
 	      		<% if !review.new_record? %>
 					<div id ="ratings_div">
 						<div id="rating_box">
-							<%= review.overall %><b id="rating_title">Overall</b>
-						</div>
+							<div id="rating_num"><%= review.overall %></div>
+							<div id="rating_title"> Overall</div>
+						</div><br><br>
 						<div id="rating_box">
-							<%= review.safety %><b id="rating_title">Safety</b>
-						</div>
+							<div id="rating_num"><%= review.safety %></div>
+							<div id="rating_title"> Safety</div>
+						</div><br><br>
 						<div id="rating_box">
-							<%= review.noise %><b id="rating_title">Noise</b>
-						</div>
+							<div id="rating_num"><%= review.noise %></div>
+							<div id="rating_title"> Noise</div>
+						</div><br><br>
 						<div id="rating_box">
-							<%= review.clean %><b id="rating_title">Clean</b>
-						</div>
+							<div id="rating_num"><%= review.clean %></div>
+							<div id="rating_title"> Clean</div>
+						</div><br><br>
 						<div id="rating_box">
-							<%= review.price %><b id="rating_title">Price</b>
+							<div id="rating_num"><%= review.price %></div>
+							<div id="rating_title"> Price</div>
 						</div>
 					</div>
-					<div id="review" style="vertical-align:top; margin-left:30px;" >
-						<p> <%=review.comment%> </p>
+					<div id="rating_comment" style="vertical-align:top; margin-left:30px;" >
+						<p> <blockquote>
+							<i id="comment_heading">Review:</i><br>
+							<div id="actual_comment"><%=review.comment%></div>
+						</blockquote> </p>
 					</div>
 					<br>
-					<%= link_to 'Edit', edit_review_path(review) %>
-					<%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %>
+					<% if user_signed_in? && current_user.email == "admin@admin.com" %>
+					  <%= link_to 'Edit', edit_review_path(review) %>
+					  <%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %>
+					<% end %>
+				</div>
 		</li>
 		</div>
 			<% end %>
