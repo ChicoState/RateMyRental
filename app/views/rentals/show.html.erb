@@ -54,8 +54,10 @@
 		<% @num_reviews = @num_reviews + 1 %>
 	<% end %>
 <% end %>
-<% @avg_price = @total_price / @num_reviews %>
-<% @avg_stars = @total_stars / @num_reviews %>
+<% if @num_reviews != 0 %>
+  <% @avg_price = @total_price / @num_reviews %>
+  <% @avg_stars = @total_stars / @num_reviews %>
+<% end %>
 <!-- RENTAL DETAILS -->
 <div class="row">
 	<div class="small-6 columns">
