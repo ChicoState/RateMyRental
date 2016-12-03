@@ -18,7 +18,7 @@
 </div>
 <!-- ADD Modal -->
 <div class="reveal" id="add_modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-	<h3>Add a Rental</h3>
+	<h3>Edit Rental</h3>
   	<p class="lead" id="render_add_rental">
 	   <%= render 'rentals/form' %>
 	</p>
@@ -38,7 +38,7 @@
 		<a id="add_button" data-open="login_modal">LOGIN</a> &nbsp;
 	<% else %>
 		<%= link_to "LOGOUT", destroy_user_session_path,:style=>'color: white; background:#660033;', method: :delete, class: 'login_button' %>
-    		<a id="add_button" data-open="add_modal">ADD</a>
+    		<a id="add_button" data-open="add_modal">EDIT</a>
 	<% end %>
     </div>
   </div>
