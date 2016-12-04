@@ -1,17 +1,14 @@
-# This is for automatic testing on Travis CI.
-# Similar to Jenkins but it is hosted by Travis and
-# students get this free.
 language: ruby
 rvm:
-  - 2.3.0
-
+- 2.3.0
 notifications:
   slack:
+    secure: mOdgQ6Q62gf4L7JwVzH+ZUFOwb7rg+4TYRXSLRRj3anp0h85sRLzxG/ClsPOl+radbgKksGkX9tNY2ba7QYT3lSbQW4XmYZMhjODIhxw0d3uirqGdMYcr4DFVESfH2X3SMZEN0DQ0eWddbI38GXr6SxP83oaDK7R/YW7oSet60yO7dD/+iA7znWqh0Jkjaet3PUXCEyrER+WLwi4bDKaGfCm+BE+GWOMl5bHVUXxYVYY0Bv4qyPVTnQvPlge2+RlFhrsfZJlwMHjP1jPGthR0gUDPeqCzFixRCFRbMNgm2JQSfL5w4/UJM2CH/BWGlqmrC1ju5oNnwx6J4uZG0ZpZlEMZzBx7Y/xC3o+DEhRB2b9cz09WNr1Vvi+FkXFZ0E6UHGXWdDvYoMyASeAGCevumAWZRmgfnmuZUoViQaIJ/R6I6nG6/JkCcn2LJi3arnqQFyk7yCYFy0JpZggHlrkEayYXKt73ZkRoIniX90vC2Dt8R/2o9Ip9JgLgw02mw1TqvB85uKH3iz0w8jME6wFYSnnwEQv0rlbOee7F3fQBPwf1h5Pca4gkcwFoASkH6FWbIWBP4kn/U+sg1qhhRHbS6N8YYE9PneS1q4kahvQpLWmtkO2qRC6XCn2dlPCzE4YgHfX/g0ZT3HWGZI0SXLqfK1VqapmCFmrUk/eZhcZHng=
     on_success: always
     on_failure: always
 
   email:
     recipients:
-      - jbankes@mail.csuchico.edu
+    - jbankes@mail.csuchico.edu
     on_success: change
     on_failure: always

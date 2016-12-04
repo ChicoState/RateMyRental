@@ -66,10 +66,17 @@
 }
 #ammed_div{
 	margin-left: 10px;
+	border: solid;
 	float: left;
 	background: #ffffff;
 	height: 100%;
 	width: 200px;
+}
+#index_icon {
+	margin-left: 2px;
+	margin-top: 3px;
+	width: 40px;
+	display: inline-block;
 }
 #search_bar{
 	background:#f2f2f2;
@@ -181,6 +188,9 @@
   top:50%;
   transform: translateY(-50%);
 }
+.g_maps {
+        margin-top: 10px;
+}
 .owl-carousel .item img{
   width: 100%;
   display: block;
@@ -259,8 +269,8 @@ margin: 0 auto;
   z-index: 100;
   white-space: nowrap;
   padding: 10px;
-  font-family: Courier New;
-  text-transform: lowercase;
+  font-family: Verdana;
+  // text-transform: lowercase;
   font-size: 16px;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 5px;

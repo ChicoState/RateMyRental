@@ -62,7 +62,7 @@
 		<% @rentals.each do |rental| %>
 			<div>
 				<%= link_to rental do %>
-					<div class="medium-3 columns">
+					<div class="medium-3 columns" data-turbolinks="false">
 						<% rental.images.each do |image| %>
 							<% if image.default == true %>
 								<%= image_tag(image.filename, :class=>"thumbnail", size:"150") %>
