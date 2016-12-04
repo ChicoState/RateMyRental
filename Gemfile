@@ -78,3 +78,5 @@ gem 'owlcarousel-rails'
 
 # gem for pagination
 gem 'kaminari'
+
+# Gem for adding multi images
