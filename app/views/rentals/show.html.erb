@@ -337,7 +337,7 @@
 			<% @rental.images.each do |image| %>
 				<% if !image.new_record? %>
 					<div class="item">
-						<%= image_tag (root_url + "/images/" + image.filename) %>
+						<%= image_tag (root_url + "/images/" + image.pic_file_name) %>
 					</div>
 				<% end %>
 			<% end %>

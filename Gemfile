@@ -80,3 +80,4 @@ gem 'owlcarousel-rails'
 gem 'kaminari'
 
 # Gem for adding multi images
+gem 'paperclip'
