@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ChicoState/RateMyRental.svg?branch=master)](https://travis-ci.org/ChicoState/RateMyRental)
+
 # Rate My Rental
 Rate My Rental is an apartment rating web application
 
@@ -15,7 +17,7 @@ Rate My Rental is an apartment rating web application
  * `\curl -L https://get.rvm.io | bash -s stable --ruby`
  * `ruby -v`  We want version 2.3.0
     - `rvm install ruby 2.3.0` to install correct verson if not right
-    - `rvm --default use 2.3.0` 
+    - `rvm --default use 2.3.0`
 * Installing Rails
  * `gem install --no-rdoc --no-ri rails` installs with out documentation to speed up instaliation
  * `rails -v` We want version 4.2.6
@@ -28,9 +30,8 @@ Rate My Rental is an apartment rating web application
 * `rails s -b 0.0.0.0` while in the project directory will run the application on http://localhost:3000
 * How to seed database
   - `rake db:drop`   drop current database
-  - `rake db:migrate` 
+  - `rake db:migrate`
   - `rake db:seed`   seed the database with the current seeds file
 
 * If you change routes
   - `rake routes` to update the routes
-
