@@ -23,16 +23,24 @@
 	width: 100%;
 }
 
+.index_query_bar {
+	float: left;
+        padding-right: 2%;
+	padding-left: 10%;
+	width: 83%;
+}
+
 .query_bar {
 	float: left;
-	padding-right: 20px;
-	padding-left: 3%;
+        padding-right: 2%;
+	padding-left: 5%;
 	width: 90%;
 }
 
 .search_button{
 	float: left;
-	height: 38.5px;
+        max-width: 20%;
+	// height: 38.5px;
 	@include button();
 	@include button-style(#660033, auto, auto);
 

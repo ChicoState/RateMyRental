@@ -9,7 +9,7 @@
 }
 #rental_div{
 	padding: 20px 20px 20px 20px;
-	height: 200px;
+        // min-height: 38vmin;
 	background: #ffffff;
 	width: 75%;
 	margin: 0 auto;
@@ -48,15 +48,24 @@
 	margin-left: 10px;
 	float: left;
 	background: #ffffff;
-	overflow: hidden;
-	max-height: 155px;
+        width: 27%;
+}
+#index_header {
+        padding: 2%;;
+        font-size: 2.5vw;
+        font-family: 'Oswald', sans-serif;
+}
+#index_header2 {
+        padding: 2%;
+        font-size: 1.5vw;
+        font-family: 'Oswald', sans-serif;
 }
 #addr_and_rating_div {
-	margin-left: 10px;
+	padding-left: 10px;
+        position: relative;
 	float: left;
-	width: 45%;
+	width: 60%;
 	background: #ffffff;
-	height: 100%;
 }
 #details_div {
 	margin-left: 10px;
@@ -66,17 +75,23 @@
 }
 #ammed_div{
 	margin-left: 10px;
-	border: solid;
 	float: left;
 	background: #ffffff;
 	height: 100%;
 	width: 200px;
 }
+#rental_content {
+        display: inline-block;
+}
 #index_icon {
-	margin-left: 2px;
-	margin-top: 3px;
-	width: 40px;
+	margin-right: .5%;
+	width: 6.5%;
 	display: inline-block;
+}
+#amen_icons {
+        padding: 2%;
+        // position: absolute;
+        // bottom: 0;
 }
 #search_bar{
 	background:#f2f2f2;
