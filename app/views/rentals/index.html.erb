@@ -77,8 +77,13 @@
 	        <div id="rental_image" data-turbolinks="false">
     	        <% rental.images.each do |image| %>
   	  	        	<% if image.default == true %>
-                    	<%= image_tag(image.filename, :class=>"thumbnail", size:"250") %>
+                    	<%= image_tag(image.pic_file_name, :class=>"thumbnail", size:"250") %>
                     <% end %>
+                    <!-- the break is so that only the first image 
+                         is default will show. Hack right now is to
+                         set all defaults on new rental images to 
+                         true til can get js var into controller -->
+                    <% break %>
                  <% end %>
              </div>			
 			<div id="addr_and_rating_div">
