@@ -95,6 +95,22 @@ class Rental < ActiveRecord::Base
 		end
 	end
 
+  def get_overall
+     @num_reviews = 0;
+     @total_stars = 0;
+     self.reviews.each do |r|
+        if !r.new_record? && r.overall.present?
+           @total_stars = r.overall + @total_stars;
+           @num_reviews = @num_reviews + 1;
+        end
+     end
+     if @num_reviews != 0
+       return @total_stars / @num_reviews
+     else
+        return 0;
+     end
+  end
+
 	def self.options_for_select_beds
 	  order('LOWER(dets_beds)').map { |e| [e.dets_beds] }.uniq
 	end
