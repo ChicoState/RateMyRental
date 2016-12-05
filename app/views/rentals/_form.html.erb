@@ -1,4 +1,4 @@
-<%= form_for(@rental) do |f| %>
+<%= form_for @rental, html: {multipart: true } do |f| %>
   <% if @rental.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@rental.errors.count, "error") %> prohibited this rental from being saved:</h2>
@@ -175,6 +175,17 @@
   </tr>
   </tbody>
   </table>
+  <div id="files">
+    <h3> Attach Rental Images </h3>
+    <!-- this is using html 5 magic to gather multiple images to pass to paperclip in the controler -->
+    <%= file_field_tag "pics[]", type: :file, multiple: true %>
+  </div>
+  <div>
+    <output id="list"> </output>
+    <div id="name"> This is the name of the file selected </div>
+  </div>
+  <br>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
