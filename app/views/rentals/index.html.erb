@@ -81,7 +81,7 @@
    <!-- used to keep track of how many rentals have been displayed -->
    <% @counter = 0 %>
    <% @top_rentals.reverse_each do |rental| %>
-      <% if @counter == 5 %>
+      <% if @counter == 10 %>
          <!-- break when count reaches 5 -->
          <% break %>
       <% end %>
