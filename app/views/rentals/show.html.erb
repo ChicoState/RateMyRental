@@ -307,19 +307,19 @@
 	      <div class="icon utility" id="tv"       onmouseover="showTooltip(this.id, 2)" onmouseout="hideTooltips()">
 		<% if(@rental.util_tv) %>
 		    <%= image_tag (root_url + "/images/" + "tv_color.png") %>
-		    <div class="details_tooltip">Cable Television Included in Rent</div>
+		    <div class="details_tooltip">Cable television included in rent</div>
 		<% else %>
 		    <%= image_tag (root_url + "/images/" + "tv_bw.png") %>
-		    <div class="details_tooltip">Cable Television Not Included in Rent</div>
+		    <div class="details_tooltip">Cable television not included in rent</div>
 		<% end %> 
 	      </div>
 	      <div class="icon utility" id="internet" onmouseover="showTooltip(this.id, 2)" onmouseout="hideTooltips()">
 		<% if(@rental.util_wifi) %>
 		    <%= image_tag (root_url + "/images/" + "internet_color.png") %>
-		    <div class="details_tooltip">Internet Included in Rent</div>
+		    <div class="details_tooltip">Internet included in rent</div>
 		<% else %>
 		    <%= image_tag (root_url + "/images/" + "internet_bw.png") %>
-		    <div class="details_tooltip">Internet Not Included in Rent</div>
+		    <div class="details_tooltip">Internet not included in rent</div>
 		<% end %> 
 	      </div>
 	    </div>
@@ -344,8 +344,8 @@
 		</div>
 	</div>
 </div>
-<!-- DRIECTIONS FROM RENTAL TO CSUC -->
-<div class="row">
+<!-- DIRECTIONS FROM RENTAL TO CSUC -->
+<div class="row g_maps">
 	<div style='width: 100%;'>
 	  	<div id="directions" style='width: 100%; height: 400px;'></div>
   	</div>

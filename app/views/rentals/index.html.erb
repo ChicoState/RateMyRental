@@ -89,7 +89,7 @@
 			<div id="addr_and_rating_div">
 			  <h5><%= rental.full_address + ", " + rental.addr_state %></h5>
 			<h6>
-                          <%= rental.dets_beds %> Bed | <%= rental.dets_baths %> Bath
+        <%= rental.dets_beds %> Bed | <%= rental.dets_baths %> Bath
 			</h6>
 			<br><br>
 			<h6>
@@ -104,10 +104,10 @@
                                 <% @num_reviews = @num_reviews + 1 %>
                             <% end %>
                         <% end %>
-			<% if @num_reviews != 0 %>
+			                  <% if @num_reviews != 0 %>
                           <% @avg_price = @total_price / @num_reviews %>
                           <% @avg_stars = @total_stars / @num_reviews %>  
-		        <% end %>
+		                    <% end %>
                         <% case @avg_price %>
                              <% when 1 %>
                                 $
@@ -120,8 +120,8 @@
                              <% when 5 %>
                                 $$$$$
                        <% end %>
-	               </h6>
-		       <h6>
+	                  </h6>
+		                <h6>
                        <% case @avg_stars %>
                             <% when 1 %>
                                 ★
@@ -134,43 +134,56 @@
                             <% when 5 %>
                                 ★★★★★
                         <% end %>
-			</h6>
+			             </h6>
 			</div>
 			<div id="ammed_div">
-				<ul>
-					<%if(rental.amen_parking)%>
-						<li>Parking on site</li>
-					<%end%>
-                    <%if(rental.amen_pets)%>
-                        <li>Pets allowed</li>     
-                    <%end%> 
-                    <%if(rental.amen_washer_dryer)%>
-                        <li>Washer & Dryer</li>     
-                    <%end%> 
-                    <%if(rental.amen_pool)%>
-                        <li>Pool</li>     
-                    <%end%> 	
-                    <%if(rental.amen_spa)%>
-                        <li>Spa</li>     
-                    <%end%> 
-                    <%if(rental.amen_gym)%>
-                        <li>Gym</li>     
-                    <%end%> 
-                    <%if(rental.amen_dishwasher)%>
-                        <li>Dishwasher</li>     
-                    <%end%> 	
-                    <%if(rental.amen_central_air)%>
-                        <li>Central Air</li>     
-                    <%end%> 
-                    <%if(rental.amen_heater)%>
-                        <li>Heater</li>     
-                    <%end%> 
-				</ul>
+			  <%if(rental.amen_parking)%>
+			    <div id="index_icon"><%= image_tag(root_url + "images/parking_color.png") %></div>
+			  <%end%>
+        <%if(rental.amen_pets)%>
+			    <div id="index_icon"><%= image_tag(root_url + "images/pets_color.png") %></div>
+        <%end%> 
+        <%if(rental.amen_washer_dryer)%>
+		      <div id="index_icon"><%= image_tag(root_url + "images/laundry_color.png") %></div>
+        <%end%> 
+        <%if(rental.amen_pool)%>
+		      <div id="index_icon"><%= image_tag(root_url + "images/pool_color.png") %></div>
+        <%end%> 	
+        <%if(rental.amen_spa)%>
+		      <div id="index_icon"><%= image_tag(root_url + "images/spa_color.png") %></div>
+        <%end%> 
+        <%if(rental.amen_gym)%>
+		      <div id="index_icon"><%= image_tag(root_url + "images/gym_color.png") %></div>
+        <%end%> 
+        <%if(rental.amen_dishwasher)%>
+		      <div id="index_icon"><%= image_tag(root_url + "images/dishwasher_color.png") %></div>
+        <%end%> 	
+        <%if(rental.amen_central_air && rental.amen_heater)%>
+		      <div id="index_icon"><%= image_tag(root_url + "images/heat_color.png") %></div>
+        <%end%> 
+        <%if(rental.util_gas)%>
+		      <div id="index_icon"><%= image_tag(root_url + "images/gas_color.png") %></div>
+        <%end%> 	
+        <%if(rental.util_electricity)%>
+		      <div id="index_icon"><%= image_tag(root_url + "images/electric_color.png") %></div>
+        <%end%> 	
+        <%if(rental.util_trash)%>
+		      <div id="index_icon"><%= image_tag(root_url + "images/trash_color.png") %></div>
+        <%end%> 	
+        <%if(rental.util_water)%>
+		      <div id="index_icon"><%= image_tag(root_url + "images/water_color.png") %></div>
+        <%end%> 	
+        <%if(rental.util_tv)%>
+		      <div id="index_icon"><%= image_tag(root_url + "images/tv_color.png") %></div>
+        <%end%> 	
+        <%if(rental.util_wifi)%>
+		      <div id="index_icon"><%= image_tag(root_url + "images/internet_color.png") %></div>
+        <%end%> 	
 			</div>	
 		</div>
 		<br>
-	  <% end %>
-    <% end %>
+  <% end %>
+<% end %>
 </div>
 <!-- MISSION STATEMENT & FOOTER -->
 <div id="footer" data-sticky-container>
