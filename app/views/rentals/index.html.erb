@@ -1,6 +1,6 @@
 <!-- LOGIN Modal -->
 <div class="reveal" id="login_modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-   <p class="lead" id="render_add_rental"> 
+   <p class="lead" id="render_add_rental">
    <%= render 'devise/sessions/new' %>
    </p>
    <button class="close-button" data-close aria-label="Close modal" type="button">
@@ -9,7 +9,7 @@
 </div>
 <!-- SIGNUP Modal -->
 <div class="reveal" id="signup_modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-   <p class="lead" id="render_add_rental"> 
+   <p class="lead" id="render_add_rental">
    <%= render 'devise/registrations/new' %>
    </p>
    <button class="close-button" data-close aria-label="Close modal" type="button">
@@ -34,7 +34,7 @@
       </div>
       <div id="right_header" class="title-bar-right">
          <% if !user_signed_in? %>
-            <a id="login_button" data-open="signup_modal">SIGNUP</a>  
+            <a id="login_button" data-open="signup_modal">SIGNUP</a>
             <a id="add_button" data-open="login_modal">LOGIN</a> &nbsp;
          <% else %>
             <%= link_to "LOGOUT", destroy_user_session_path,:style=>'color: white; background:#660033;', method: :delete, class: 'login_button' %>
@@ -80,19 +80,24 @@
                      <% if image.default == true %>
                         <%= image_tag(image.filename, :class=>"thumbnail", size:"250") %>
                      <% end %>
+                     <!-- the break is so that only the first image
+                          is default will show. Hack right now is to
+                          set all defaults on new rental images to
+                          true til can get js var into controller -->
+                    <% break %>
                   <% end %>
-               </div>			
+               </div>
                <div id="addr_and_rating_div">
                   <div id="index_header"><%= rental.full_address + ", " + rental.addr_state %></div>
                   <div id="index_header2">
                      <%= rental.dets_beds %>
                      <% if rental.dets_beds == 1 %>
-                        Bed 
+                        Bed
                      <% else %>
                         Beds
                      <% end %> &nbsp;|&nbsp;
-                     <%= rental.dets_baths %> 
-                     <% if rental.dets_baths == 1 %> 
+                     <%= rental.dets_baths %>
+                     <% if rental.dets_baths == 1 %>
                         Bath
                      <% else %>
                         Baths
@@ -118,7 +123,7 @@
                      <% end %>
                      <% if @num_reviews != 0 %>
                         <% @avg_price = @total_price / @num_reviews %>
-                        <% @avg_stars = @total_stars / @num_reviews %>  
+                        <% @avg_stars = @total_stars / @num_reviews %>
                      <% end %>
                      <% case @avg_stars %>
                      <% when 1 %>
@@ -151,43 +156,43 @@
                      <%end%>
                      <%if(rental.amen_pets)%>
                         <div id="index_icon"><%= image_tag(root_url + "images/pets_color.png") %></div>
-                     <%end%> 
+                     <%end%>
                      <%if(rental.amen_washer_dryer)%>
                         <div id="index_icon"><%= image_tag(root_url + "images/laundry_color.png") %></div>
-                     <%end%> 
+                     <%end%>
                      <%if(rental.amen_pool)%>
                         <div id="index_icon"><%= image_tag(root_url + "images/pool_color.png") %></div>
-                     <%end%> 	
+                     <%end%>
                      <%if(rental.amen_spa)%>
                         <div id="index_icon"><%= image_tag(root_url + "images/spa_color.png") %></div>
-                     <%end%> 
+                     <%end%>
                      <%if(rental.amen_gym)%>
                         <div id="index_icon"><%= image_tag(root_url + "images/gym_color.png") %></div>
-                     <%end%> 
+                     <%end%>
                      <%if(rental.amen_dishwasher)%>
                         <div id="index_icon"><%= image_tag(root_url + "images/dishwasher_color.png") %></div>
-                     <%end%> 	
+                     <%end%>
                      <%if(rental.amen_central_air && rental.amen_heater)%>
                         <div id="index_icon"><%= image_tag(root_url + "images/heat_color.png") %></div>
-                     <%end%> 
+                     <%end%>
                      <%if(rental.util_gas)%>
                         <div id="index_icon"><%= image_tag(root_url + "images/gas_color.png") %></div>
-                     <%end%> 	
+                     <%end%>
                      <%if(rental.util_electricity)%>
                         <div id="index_icon"><%= image_tag(root_url + "images/electric_color.png") %></div>
-                     <%end%> 	
+                     <%end%>
                      <%if(rental.util_trash)%>
                         <div id="index_icon"><%= image_tag(root_url + "images/trash_color.png") %></div>
-                     <%end%> 	
+                     <%end%>
                      <%if(rental.util_water)%>
                         <div id="index_icon"><%= image_tag(root_url + "images/water_color.png") %></div>
-                     <%end%> 	
+                     <%end%>
                      <%if(rental.util_tv)%>
                         <div id="index_icon"><%= image_tag(root_url + "images/tv_color.png") %></div>
-                     <%end%> 	
+                     <%end%>
                      <%if(rental.util_wifi)%>
                         <div id="index_icon"><%= image_tag(root_url + "images/internet_color.png") %></div>
-                     <%end%> 	
+                     <%end%>
                   </div>
                </div>
             </div>
@@ -198,14 +203,14 @@
 </div>
 <!-- MISSION STATEMENT & FOOTER -->
 <div id="footer" data-sticky-container>
-   <div id="footer"class="title-bar" data-sticky data-options="marginBottom:0;" 
+   <div id="footer"class="title-bar" data-sticky data-options="marginBottom:0;"
       style="width:100%" data-top-anchor="1" data-btm-anchor="content:bottom">
       <div class="title-bar-left">
          <h4>Our Mission ...</h4>
          <i>At Rate My Rental we strive to introduce and educate renters and make their home dreams a reality. </i>
       </div>
       <div class="title-bar-right">
-         Contact Us: PHONE | EMAIL 
+         Contact Us: PHONE | EMAIL
       </div>
    </div>
 </div>

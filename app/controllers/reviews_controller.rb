@@ -31,6 +31,14 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.save
+
+        # saving images with paperclip
+        if params[:pics]
+          params[:pics].each { |pic| 
+            @rental.images.create(pic: pic)
+          }
+        end
+
         format.html { redirect_to @rental, notice: 'Review was successfully created.' }
         format.json { render :show, status: :created, location: @review }
       else
@@ -72,6 +80,6 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:overall, :safety, :clean, :noise, :price, :comment, :user_id, :rental_id)
+      params.require(:review).permit(:overall, :safety, :clean, :noise, :price, :comment, :user_id, :rental_id, :pics)
     end
 end
