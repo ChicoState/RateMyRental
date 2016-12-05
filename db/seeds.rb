@@ -18,7 +18,7 @@
 #     dets_owner: "John Doe"
 #     amen_parking: false
 #     amen_pets: true
-#     amen_washer_dryer: true 
+#     amen_washer_dryer: true
 #     amen_pool: false
 #     amen_spa: true
 #     amen_gym: false
@@ -53,7 +53,7 @@ users = User.create(
     { email: 'c@c.com', password: "c", password_confirmation: "c"},
     { email: 'd@d.com', password: "d", password_confirmation: "d"},
     { email: 'e@e.com', password: "e", password_confirmation: "e"},
-    { email: 'f@f.com', password: "f", password_confirmation: "f"}, 
+    { email: 'f@f.com', password: "f", password_confirmation: "f"},
     { email: 'g@g.com', password: "g", password_confirmation: "g"},
     { email: 'h@h.com', password: "h", password_confirmation: "h"},
     { email: 'i@i.com', password: "i", password_confirmation: "i"}
@@ -62,7 +62,7 @@ users = User.create(
 
 rentals = Rental.create(
   [
-	# 1 
+	# 1
     { addr_full_adress: "327 Normal Ave Chico CA 95928", addr_street_name: "Normal Ave", addr_street_num: "327", addr_zip: "95928", addr_city: "Chico", addr_state: "CA", dets_beds: 1, dets_baths: 1, dets_is_complex: true, dets_stories: 2, dets_company_owned: true, dets_owner: "", amen_parking: false, amen_pets: false, amen_washer_dryer: true , amen_pool: false, amen_spa: true, amen_gym: false, amen_dishwasher: false, amen_central_air: true, amen_heater: false, util_gas: false, util_electricity: false, util_trash: true, util_water: false, util_tv: false, util_wifi: true },
 	# 2
     { addr_full_adress: "14 Klondike Ct Chico CA 95926", addr_street_name: "Klondike Ct", addr_street_num: "14", addr_zip: "95926", addr_city: "Chico", addr_state: "CA", dets_beds: 4, dets_baths: 2, dets_is_complex: true, dets_stories: 1, dets_company_owned: false, dets_owner: "John Doe", amen_parking: true, amen_pets: true, amen_washer_dryer: true , amen_pool: true, amen_spa: false, amen_gym: false, amen_dishwasher: true, amen_central_air: false, amen_heater: false, util_gas: false, util_electricity: false, util_trash: true, util_water: true, util_tv: true, util_wifi: false },
@@ -95,7 +95,7 @@ rentals = Rental.create(
  util_water: false, util_tv: false, util_wifi: false },
     # 14
     { addr_full_adress: "627 W 2nd St Chico CA 95928", addr_street_name: "W 2nd St", addr_street_num: "627", addr_zip: "95928", addr_city: "Chico", addr_state: "CA", dets_beds: 3, dets_baths: 2, dets_is_complex: true, dets_stories: 1, dets_company_owned: true, dets_owner: "None", amen_parking: true, amen_pets: false, amen_washer_dryer: true , amen_pool: false, amen_spa: false, amen_gym: false, amen_dishwasher: true, amen_central_air: true, amen_heater: true, util_gas: true, util_electricity: false, util_trash: true, util_water: true, util_tv: false, util_wifi: false },
-    # 15 
+    # 15
     { addr_full_adress: "489 W Sacramento Ave Chico CA 95926", addr_street_name: "W Sacramento Ave", addr_street_num: "489", addr_zip: "95926", addr_city: "Chico", addr_state: "CA", dets_beds: 2, dets_baths: 1, dets_is_complex: false, dets_stories: 1, dets_company_owned: false, dets_owner: "Frank Furter", amen_parking: true, amen_pets: false, amen_washer_dryer: true , amen_pool: false, amen_spa: false, amen_gym: false, amen_dishwasher: false, amen_central_air: true, amen_heater: true, util_gas: true, util_electricity: false, util_trash: true, util_water: true, util_tv: false, util_wifi: false },
     # 16
     { addr_full_adress: "462 E 5th St Chico CA 95928", addr_street_name: "E 5th St", addr_street_num: "462", addr_zip: "95928", addr_city: "Chico", addr_state: "CA", dets_beds: 4, dets_baths: 2, dets_is_complex: false, dets_stories: 1, dets_company_owned: true, dets_owner: "None", amen_parking: true, amen_pets: false, amen_washer_dryer: false , amen_pool: false, amen_spa: false, amen_gym: false, amen_dishwasher: false, amen_central_air: false, amen_heater: true, util_gas: false, util_electricity: false, util_trash: true,
@@ -123,7 +123,7 @@ rentals = Rental.create(
     # 25
     { addr_full_adress: "1417 W 7th St Chico CA 95928", addr_street_name: "W 7th St", addr_street_num: "1417", addr_zip: "95928", addr_city: "Chico", addr_state: "CA", dets_beds: 4, dets_baths: 2, dets_is_complex: false, dets_stories: 1, dets_company_owned: true, dets_owner: "None", amen_parking: true, amen_pets: false, amen_washer_dryer: false , amen_pool: false, amen_spa: false, amen_gym: false, amen_dishwasher: false, amen_central_air: false, amen_heater: true, util_gas: false, util_electricity: false, util_trash: true,
  util_water: false, util_tv: false, util_wifi: false },
-    # 26 
+    # 26
     { addr_full_adress: "1535 W 5th St Chico CA 95928", addr_street_name: "W 5th St", addr_street_num: "1535", addr_zip: "95928", addr_city: "Chico", addr_state: "CA", dets_beds: 3, dets_baths: 2, dets_is_complex: true, dets_stories: 1, dets_company_owned: true, dets_owner: "None", amen_parking: true, amen_pets: false, amen_washer_dryer: true , amen_pool: false, amen_spa: false, amen_gym: false, amen_dishwasher: true, amen_central_air: true, amen_heater: true, util_gas: true, util_electricity: false, util_trash: true, util_water: true, util_tv: false, util_wifi: false },
     # 27
     { addr_full_adress: "381 W Sacramento Ave Chico CA 95926", addr_street_name: "W Sacramento Ave", addr_street_num: "381", addr_zip: "95926", addr_city: "Chico", addr_state: "CA", dets_beds: 1, dets_baths: 1, dets_is_complex: false, dets_stories: 1, dets_company_owned: false, dets_owner: "Frank Furter", amen_parking: true, amen_pets: false, amen_washer_dryer: true , amen_pool: false, amen_spa: false, amen_gym: false, amen_dishwasher: false, amen_central_air: true, amen_heater: true, util_gas: true, util_electricity: false, util_trash: true, util_water: true, util_tv: false, util_wifi: false },
@@ -133,7 +133,7 @@ rentals = Rental.create(
     # 29
     { addr_full_adress: "1130 W 4th St Chico CA 95928", addr_street_name: "W 4th St", addr_street_num: "1130", addr_zip: "95928", addr_city: "Chico", addr_state: "CA", dets_beds: 1, dets_baths: 1, dets_is_complex: false, dets_stories: 1, dets_company_owned: true, dets_owner: "None", amen_parking: true, amen_pets: false, amen_washer_dryer: false , amen_pool: false, amen_spa: false, amen_gym: false, amen_dishwasher: false, amen_central_air: false, amen_heater: true, util_gas: false, util_electricity: false, util_trash: true,
  util_water: false, util_tv: false, util_wifi: false },
-    # 30 
+    # 30
     { addr_full_adress: "329 W 6th Ave Chico CA 95926", addr_street_name: "W 6th Ave", addr_street_num: "329", addr_zip: "95926", addr_city: "Chico", addr_state: "CA", dets_beds: 2, dets_baths: 1, dets_is_complex: false, dets_stories: 1, dets_company_owned: false, dets_owner: "Frank Furter", amen_parking: true, amen_pets: false, amen_washer_dryer: true , amen_pool: false, amen_spa: false, amen_gym: false, amen_dishwasher: false, amen_central_air: true, amen_heater: true, util_gas: true, util_electricity: false, util_trash: true, util_water: true, util_tv: false, util_wifi: false },
     # 31
     { addr_full_adress: "1104 W 4th St Chico CA 95928", addr_street_name: "W 4th St", addr_street_num: "1104", addr_zip: "95928", addr_city: "Chico", addr_state: "CA", dets_beds: 4, dets_baths: 2, dets_is_complex: false, dets_stories: 1, dets_company_owned: true, dets_owner: "None", amen_parking: true, amen_pets: false, amen_washer_dryer: false , amen_pool: false, amen_spa: false, amen_gym: false, amen_dishwasher: false, amen_central_air: false, amen_heater: true, util_gas: false, util_electricity: false, util_trash: true,
@@ -177,7 +177,7 @@ reviews = Review.create(
       { overall: 4, safety: 4, clean: 5, noise: 2, price: 4, comment: "Lovely little place now. Sooo much better than before", rental_id: 2, user_id: 2 },
       { overall: 4, safety: 4, clean: 3, noise: 2, price: 3, comment: "This was a fun apartment", rental_id: 3, user_id: 2 },
       { overall: 5, safety: 5, clean: 5, noise: 1, price: 4, comment: "It was pretty close to campus", rental_id: 3, user_id: 3 },
-	
+
 	# For Rental ID 4 - 333 Oak Street
 	  { overall: 5, safety: 5, clean: 2, noise: 4, price: 3, comment: "This place is the perfect apartment NOW... BEFORE it was infested with cockroaches when we moved in! Totally nasty, but it was worth the wait. I love this apartment and I am sad to leave it when my lease is over:( ", rental_id: 4 , user_id: 5},
 	  { overall: 2, safety: 4, clean: 1, noise: 4, price: 3, comment: "Bugs everywhere!!!", rental_id: 4, user_id: 6 },
@@ -219,8 +219,8 @@ reviews = Review.create(
       { overall: 3, safety: 3, clean: 3, noise: 1, price: 3, comment: "The perfect house to host parties! I just wish it had central AC.", rental_id: 14, user_id: 1 },
     # For Rental ID 15
       { overall: 3, safety: 4, clean: 2, noise: 1, price: 4, comment: "Large bedrooms, but it has an awkward layout", rental_id: 15, user_id: 4 },
-      { overall: 4, safety: 4, clean: 4, noise: 1, price: 4, comment: "Cute funky old house!", rental_id: 15, user_id: 6 }, 
-    # For Rental ID 16      
+      { overall: 4, safety: 4, clean: 4, noise: 1, price: 4, comment: "Cute funky old house!", rental_id: 15, user_id: 6 },
+    # For Rental ID 16
 	  { overall: 5, safety: 5, clean: 2, noise: 4, price: 3, comment: "I love this apartment and I am sad to leave it when my lease is over:( ", rental_id: 16 , user_id: 5},
       { overall: 2, safety: 4, clean: 1, noise: 4, price: 3, comment: "Bugs everywhere!!!", rental_id: 16, user_id: 6 },
     # For Rental ID 17
@@ -256,7 +256,7 @@ reviews = Review.create(
     # For Rental ID 25
       { overall: 3, safety: 4, clean: 2, noise: 1, price: 4, comment: "Large bedrooms, but it has an awkward layout", rental_id: 25, user_id: 4 },
       { overall: 4, safety: 4, clean: 4, noise: 1, price: 4, comment: "Cute funky old house!", rental_id: 25, user_id: 6 },
-    # For Rental ID 26      
+    # For Rental ID 26
       { overall: 5, safety: 5, clean: 2, noise: 4, price: 3, comment: "I love this apartment and I am sad to leave it when my lease is over:( ", rental_id: 26 , user_id: 5},
       { overall: 2, safety: 4, clean: 1, noise: 4, price: 3, comment: "Bugs everywhere!!!", rental_id: 26, user_id: 6 },
     # For Rental ID 27
@@ -292,7 +292,7 @@ reviews = Review.create(
     # For Rental ID 35
       { overall: 3, safety: 4, clean: 2, noise: 1, price: 4, comment: "Large bedrooms, but it has an awkward layout", rental_id: 35, user_id: 4 },
       { overall: 4, safety: 4, clean: 4, noise: 1, price: 4, comment: "Cute funky old house!", rental_id: 35, user_id: 6 },
-    # For Rental ID 36      
+    # For Rental ID 36
       { overall: 5, safety: 5, clean: 2, noise: 4, price: 3, comment: "I love this apartment and I am sad to leave it when my lease is over:( ", rental_id: 36 , user_id: 5},
       { overall: 2, safety: 4, clean: 1, noise: 4, price: 3, comment: "Bugs everywhere!!!", rental_id: 36, user_id: 6 },
     # For Rental ID 37
@@ -323,11 +323,11 @@ images = Image.create(
       { filename: "h07.jpg", pic_file_name: "h07.jpg", default: false, rental_id: 2 },
       { filename: "h08.jpg", pic_file_name: "h08.jpg", default: true, rental_id: 3 },
       { filename: "h09.jpg", pic_file_name: "h09.jpg", default: false, rental_id: 3 },
-	# Rental ID 4 - 333 Oak 
+	# Rental ID 4 - 333 Oak
       { filename: "333default.png", pic_file_name: "333default.png", default: true, rental_id: 4 },
       { filename: "h07.jpg", pic_file_name: "h07.jpg", default: false, rental_id: 4 },
       { filename: "h08.jpg", pic_file_name: "h08.jpg", default: false, rental_id: 4 },
-      { filename: "h09.jpg", pic_file_name: "h09.jpg", default: false, rental_id: 4 },	
+      { filename: "h09.jpg", pic_file_name: "h09.jpg", default: false, rental_id: 4 },
 	# Rental ID 5 - 442 W 2nd
       { filename: "442default.png", pic_file_name: "442default.png", default: true, rental_id: 5 },
       { filename: "h07.jpg", pic_file_name: "h07.jpg", default: false, rental_id: 5 },
@@ -354,158 +354,158 @@ images = Image.create(
       { filename: "h08.jpg", pic_file_name: "h08.jpg", default: false, rental_id: 9 },
       { filename: "h09.jpg", pic_file_name: "h09.jpg", default: false, rental_id: 9 },
     # Rental ID 10 - 717
-      { filename: "717default.png", default: true, rental_id: 10 },
-      { filename: "h07.jpg", default: false, rental_id: 10 },
-      { filename: "h04.jpg", default: false, rental_id: 10 },
-      { filename: "h03.jpg", default: false, rental_id: 10 },
+      { filename: "717default.png", pic_file_name:"717default.png", default: true, rental_id: 10 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 10 },
+      { filename: "h04.jpg", pic_file_name:"h04.jpg", default: false, rental_id: 10 },
+      { filename: "h03.jpg", pic_file_name:"h03.jpg", default: false, rental_id: 10 },
     # Rental ID 11 - 425
-      { filename: "425default.png", default: true, rental_id: 11 },
-      { filename: "h07.jpg", default: false, rental_id: 11 },
-      { filename: "h06.jpg", default: false, rental_id: 11 },
-      { filename: "h08.jpg", default: false, rental_id: 11 },
+      { filename: "425default.png", pic_file_name:"425default.png", default: true, rental_id: 11 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 11 },
+      { filename: "h06.jpg", pic_file_name:"h06.jpg", default: false, rental_id: 11 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 11 },
     # Rental ID 12 - 712
-      { filename: "712default.png", default: true, rental_id: 12 },
-      { filename: "h07.jpg", default: false, rental_id: 12 },
-      { filename: "h08.jpg", default: false, rental_id: 12 },
-      { filename: "h09.jpg", default: false, rental_id: 12 },
+      { filename: "712default.png", pic_file_name:"712default.png", default: true, rental_id: 12 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 12 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 12 },
+      { filename: "h09.jpg", pic_file_name:"h09.jpg", default: false, rental_id: 12 },
     # Rental ID 13 - 227
-      { filename: "227default.png", default: true, rental_id: 13 },
-      { filename: "h07.jpg", default: false, rental_id: 13 },
-      { filename: "h08.jpg", default: false, rental_id: 13 },
-      { filename: "h09.jpg", default: false, rental_id: 13 },
+      { filename: "227default.png", pic_file_name:"227default.png", default: true, rental_id: 13 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 13 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 13 },
+      { filename: "h09.jpg", pic_file_name:"h09.jpg", default: false, rental_id: 13 },
     # Rental ID 14 - 627
-      { filename: "627default.png", default: true, rental_id: 14 },
-      { filename: "h07.jpg", default: false, rental_id: 14 },
-      { filename: "h08.jpg", default: false, rental_id: 14 },
-      { filename: "h09.jpg", default: false, rental_id: 14 },
+      { filename: "627default.png", pic_file_name:"627default.png", default: true, rental_id: 14 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 14 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 14 },
+      { filename: "h09.jpg", pic_file_name:"h09.jpg", default: false, rental_id: 14 },
     # Rental ID 15 - 489
-      { filename: "489default.png", default: true, rental_id: 15 },
-      { filename: "h07.jpg", default: false, rental_id: 15 },
-      { filename: "h08.jpg", default: false, rental_id: 15 },
-      { filename: "h09.jpg", default: false, rental_id: 15 },
+      { filename: "489default.png", pic_file_name:"489default.png", default: true, rental_id: 15 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 15 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 15 },
+      { filename: "h09.jpg", pic_file_name:"h09.jpg", default: false, rental_id: 15 },
     # Rental ID 16 - 462
-      { filename: "462default.png", default: true, rental_id: 16 },
-      { filename: "h07.jpg", default: false, rental_id: 16 },
-      { filename: "h08.jpg", default: false, rental_id: 16 },
-      { filename: "h09.jpg", default: false, rental_id: 16 },
+      { filename: "462default.png", pic_file_name:"462default.png", default: true, rental_id: 16 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 16 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 16 },
+      { filename: "h09.jpg", pic_file_name:"h09.jpg", default: false, rental_id: 16 },
     # Rental ID 17 - 417
-      { filename: "417default.png", default: true, rental_id: 17 },
-      { filename: "h07.jpg", default: false, rental_id: 17 },
-      { filename: "h08.jpg", default: false, rental_id: 17 },
-      { filename: "h09.jpg", default: false, rental_id: 17 },
+      { filename: "417default.png", pic_file_name:"417default.png", default: true, rental_id: 17 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 17 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 17 },
+      { filename: "h09.jpg", pic_file_name:"h09.jpg", default: false, rental_id: 17 },
     # Rental ID 18 - 720
-      { filename: "720default.png", default: true, rental_id: 18 },
-      { filename: "h07.jpg", default: false, rental_id: 18 },
-      { filename: "h08.jpg", default: false, rental_id: 18 },
-      { filename: "h09.jpg", default: false, rental_id: 18 },
+      { filename: "720default.png", pic_file_name:"720default.png", default: true, rental_id: 18 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 18 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 18 },
+      { filename: "h09.jpg", pic_file_name:"h09.jpg", default: false, rental_id: 18 },
     # Rental ID 19 - 244
-      { filename: "244default.png", default: true, rental_id: 19 },
-      { filename: "h07.jpg", default: false, rental_id: 19 },
-      { filename: "h08.jpg", default: false, rental_id: 19 },
-      { filename: "h09.jpg", default: false, rental_id: 19 },
+      { filename: "244default.png", pic_file_name:"244default.png", default: true, rental_id: 19 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 19 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 19 },
+      { filename: "h09.jpg", pic_file_name:"h09.jpg", default: false, rental_id: 19 },
     # Rental ID 20 - 1223
-      { filename: "1223default.png", default: true, rental_id: 20 },
-      { filename: "h07.jpg", default: false, rental_id: 20 },
-      { filename: "h08.jpg", default: false, rental_id: 20 },
-      { filename: "h09.jpg", default: false, rental_id: 20 },
+      { filename: "1223default.png", pic_file_name:"1223default.png", default: true, rental_id: 20 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 20 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 20 },
+      { filename: "h09.jpg", pic_file_name:"h09.jpg", default: false, rental_id: 20 },
     # Rental ID 21 - 334
-      { filename: "334default.png", default: true, rental_id: 21 },
-      { filename: "h07.jpg", default: false, rental_id: 21 },
-      { filename: "h08.jpg", default: false, rental_id: 21 },
-      { filename: "h09.jpg", default: false, rental_id: 21 },
-    # Rental ID 22 - 1316 
-      { filename: "1316default.png", default: true, rental_id: 22 },
-      { filename: "h07.jpg", default: false, rental_id: 22 },
-      { filename: "h08.jpg", default: false, rental_id: 22 },
-      { filename: "h09.jpg", default: false, rental_id: 22 },
+      { filename: "334default.png", pic_file_name:"334default.png", default: true, rental_id: 21 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 21 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 21 },
+      { filename: "h09.jpg", pic_file_name:"h09.jpg", default: false, rental_id: 21 },
+    # Rental ID 22 - 1316
+      { filename: "1316default.png", pic_file_name:"1316default.png", default: true, rental_id: 22 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 22 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 22 },
+      { filename: "h09.jpg", pic_file_name:"h09.jpg", default: false, rental_id: 22 },
     # Rental ID 23 - 506
-      { filename: "506default.png", default: true, rental_id: 23 },
-      { filename: "h07.jpg", default: false, rental_id: 23 },
-      { filename: "h08.jpg", default: false, rental_id: 23 },
-      { filename: "h09.jpg", default: false, rental_id: 23 },
+      { filename: "506default.png", pic_file_name:"506default.png", default: true, rental_id: 23 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 23 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 23 },
+      { filename: "h09.jpg", pic_file_name:"h09.jpg", default: false, rental_id: 23 },
     # Rental ID 24 - 1162
-      { filename: "1162default.png", default: true, rental_id: 24 },
-      { filename: "h07.jpg", default: false, rental_id: 24 },
-      { filename: "h08.jpg", default: false, rental_id: 24 },
-      { filename: "h09.jpg", default: false, rental_id: 24 },
+      { filename: "1162default.png", pic_file_name:"1162default.png", default: true, rental_id: 24 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 24 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 24 },
+      { filename: "h09.jpg", pic_file_name:"h09.jpg", default: false, rental_id: 24 },
     # Rental ID 25 - 1417
-      { filename: "1417default.png", default: true, rental_id: 25 },
-      { filename: "h07.jpg", default: false, rental_id: 25 },
-      { filename: "h08.jpg", default: false, rental_id: 25},
-      { filename: "h09.jpg", default: false, rental_id: 25 },
+      { filename: "1417default.png", pic_file_name:"1417default.png", default: true, rental_id: 25 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 25 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 25},
+      { filename: "h09.jpg", pic_file_name:"h09.jpg", default: false, rental_id: 25 },
     # Rental ID 26 - 1535
-      { filename: "1535default.png", default: true, rental_id: 26 },
-      { filename: "h07.jpg", default: false, rental_id: 26 },
-      { filename: "h08.jpg", default: false, rental_id: 26 },
-      { filename: "h09.jpg", default: false, rental_id: 26 },
+      { filename: "1535default.png", pic_file_name:"1535default.png", default: true, rental_id: 26 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 26 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 26 },
+      { filename: "h09.jpg", pic_file_name:"h09.jpg", default: false, rental_id: 26 },
     # Rental ID 27 - 381
-      { filename: "381default.png", default: true, rental_id: 27 },
-      { filename: "h07.jpg", default: false, rental_id: 27 },
-      { filename: "h08.jpg", default: false, rental_id: 27 },
-      { filename: "h09.jpg", default: false, rental_id: 27 },
-    # Rental ID 28 - 1042 
-      { filename: "1042default.png", default: true, rental_id: 28 },
-      { filename: "h07.jpg", default: false, rental_id: 28 },
-      { filename: "h08.jpg", default: false, rental_id: 28 },
-      { filename: "h09.jpg", default: false, rental_id: 28 },
+      { filename: "381default.png", pic_file_name:"381default.png", default: true, rental_id: 27 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 27 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 27 },
+      { filename: "h09.jpg", pic_file_name:"h09.jpg", default: false, rental_id: 27 },
+    # Rental ID 28 - 1042
+      { filename: "1042default.png", pic_file_name:"1042default.png", default: true, rental_id: 28 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 28 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 28 },
+      { filename: "h09.jpg", pic_file_name:"h09.jpg", default: false, rental_id: 28 },
     # Rental ID 29 - 1130
-      { filename: "1130default.png", default: true, rental_id: 29 },
-      { filename: "h07.jpg", default: false, rental_id: 29 },
-      { filename: "h08.jpg", default: false, rental_id: 29 },
-      { filename: "h09.jpg", default: false, rental_id: 29 },
+      { filename: "1130default.png", pic_file_name:"1130default.png", default: true, rental_id: 29 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 29 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 29 },
+      { filename: "h09.jpg", pic_file_name:"h09.jpg", default: false, rental_id: 29 },
     # Rental ID 30 - 329
-      { filename: "329default.png", default: true, rental_id: 30 },
-      { filename: "h07.jpg", default: false, rental_id: 30 },
-      { filename: "h08.jpg", default: false, rental_id: 30 },
-      { filename: "h09.jpg", default: false, rental_id: 30 },
+      { filename: "329default.png", pic_file_name:"329default.png", default: true, rental_id: 30 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 30 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 30 },
+      { filename: "h09.jpg", pic_file_name:"h09.jpg", default: false, rental_id: 30 },
     # Rental ID 31 - 1104
-      { filename: "1104default.png", default: true, rental_id: 31 },
-      { filename: "h07.jpg", default: false, rental_id: 31 },
-      { filename: "h08.jpg", default: false, rental_id: 31 },
-      { filename: "h09.jpg", default: false, rental_id: 31 },
+      { filename: "1104default.png", pic_file_name:"1104default.png", default: true, rental_id: 31 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 31 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 31 },
+      { filename: "h09.jpg", pic_file_name:"h09.jpg", default: false, rental_id: 31 },
     # Rental ID 32 - 234
-      { filename: "234default.png", default: true, rental_id: 32 },
-      { filename: "h07.jpg", default: false, rental_id: 32 },
-      { filename: "h08.jpg", default: false, rental_id: 32 },
-      { filename: "h09.jpg", default: false, rental_id: 32 },
+      { filename: "234default.png", pic_file_name:"234default.png", default: true, rental_id: 32 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 32 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 32 },
+      { filename: "h09.jpg", pic_file_name:"h09.jpg", default: false, rental_id: 32 },
     # Rental ID 33 - 1612
-      { filename: "1612default.png", default: true, rental_id: 33 },
-      { filename: "h07.jpg", default: false, rental_id: 33 },
-      { filename: "h08.jpg", default: false, rental_id: 33 },
-      { filename: "h09.jpg", default: false, rental_id: 33 },
-    # Rental ID 34 - 228 
-      { filename: "228default.png", default: true, rental_id: 34 },
-      { filename: "h07.jpg", default: false, rental_id: 34 },
-      { filename: "h08.jpg", default: false, rental_id: 34 },
-      { filename: "h09.jpg", default: false, rental_id: 34 },
+      { filename: "1612default.png", pic_file_name:"1612default.png", default: true, rental_id: 33 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 33 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 33 },
+      { filename: "h09.jpg", pic_file_name:"h09.jpg", default: false, rental_id: 33 },
+    # Rental ID 34 - 228
+      { filename: "228default.png", pic_file_name:"228default.png", default: true, rental_id: 34 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 34 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 34 },
+      { filename: "h09.jpg", pic_file_name:"h09.jpg", default: false, rental_id: 34 },
     # Rental ID 35 - 220
-      { filename: "220default.png", default: true, rental_id: 35 },
-      { filename: "h07.jpg", default: false, rental_id: 35 },
-      { filename: "h08.jpg", default: false, rental_id: 35 },
-      { filename: "h09.jpg", default: false, rental_id: 35 },
+      { filename: "220default.png", pic_file_name:"220default.png", default: true, rental_id: 35 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 35 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 35 },
+      { filename: "h09.jpg", pic_file_name:"h09.jpg", default: false, rental_id: 35 },
     # Rental ID 36 - 1610
-      { filename: "1610default.png", default: true, rental_id: 36 },
-      { filename: "h07.jpg", default: false, rental_id: 36 },
-      { filename: "h08.jpg", default: false, rental_id: 36 },
-      { filename: "h09.jpg", default: false, rental_id: 36 },
+      { filename: "1610default.png", pic_file_name:"1610default.png", default: true, rental_id: 36 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 36 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 36 },
+      { filename: "h09.jpg", pic_file_name:"h09.jpg", default: false, rental_id: 36 },
     # Rental ID 37 - 351
-      { filename: "351default.png", default: true, rental_id: 37 },
-      { filename: "h07.jpg", default: false, rental_id: 37 },
-      { filename: "h08.jpg", default: false, rental_id: 37 },
-      { filename: "h09.jpg", default: false, rental_id: 37 },
+      { filename: "351default.png", pic_file_name:"351default.png", default: true, rental_id: 37 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 37 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 37 },
+      { filename: "h09.jpg", pic_file_name:"h09.jpg", default: false, rental_id: 37 },
     # Rental ID 38 - 412
-      { filename: "412default.png", default: true, rental_id: 38 },
-      { filename: "h07.jpg", default: false, rental_id: 38 },
-      { filename: "h08.jpg", default: false, rental_id: 38 },
-      { filename: "h09.jpg", default: false, rental_id: 38 },
+      { filename: "412default.png", pic_file_name:"412default.png", default: true, rental_id: 38 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 38 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 38 },
+      { filename: "h09.jpg", pic_file_name:"h09.jpg", default: false, rental_id: 38 },
     # Rental ID 39 - 871
-      { filename: "871default.png", default: true, rental_id: 39 },
-      { filename: "h07.jpg", default: false, rental_id: 39 },
-      { filename: "h08.jpg", default: false, rental_id: 39 },
-      { filename: "h09.jpg", default: false, rental_id: 39 },
+      { filename: "871default.png", pic_file_name:"871default.png", default: true, rental_id: 39 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 39 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 39 },
+      { filename: "h09.jpg", pic_file_name:"h09.jpg", default: false, rental_id: 39 },
     # Rental ID 40 - 445
-      { filename: "445default.png", default: true, rental_id: 40 },
-      { filename: "h07.jpg", default: false, rental_id: 40 },
-      { filename: "h08.jpg", default: false, rental_id: 40 },
-      { filename: "h09.jpg", default: false, rental_id: 40 }
+      { filename: "445default.png", pic_file_name:"445default.png", default: true, rental_id: 40 },
+      { filename: "h07.jpg", pic_file_name:"h07.jpg", default: false, rental_id: 40 },
+      { filename: "h08.jpg", pic_file_name:"h08.jpg", default: false, rental_id: 40 },
+      { filename: "h09.jpg", pic_file_name:"h09.jpg", default: false, rental_id: 40 }
 ])
