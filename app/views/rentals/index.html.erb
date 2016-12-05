@@ -68,10 +68,24 @@
 <% #if user_signed_in? %>
 <% #= current_user.email %>
 <% #end %>
+<!-- Calculates the top rentals by overall rating -->
+<% @top_rentals = Rental.all %>
+<% @top_rentals.each do |r| %>
+   <% @avg = r.get_overall %>
+   <% @top_rentals = @top_rentals.sort_by { |a| a.get_overall } %>
+<% end %>
+
 <!-- RENTAL LISTINGS -->
 <div id="rental_listings_div">
    <br>
-   <% @rentals.each do |rental| %>
+   <!-- used to keep track of how many rentals have been displayed -->
+   <% @counter = 0 %>
+   <% @top_rentals.reverse_each do |rental| %>
+      <% if @counter == 10 %>
+         <!-- break when count reaches 5 -->
+         <% break %>
+      <% end %>
+      <% @counter += 1 %>
       <div id="rental_div">
          <%= link_to rental do %>
             <div id="rental_content">
