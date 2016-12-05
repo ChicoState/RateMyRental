@@ -135,5 +135,36 @@ images = Image.create(
       { filename: "h06.jpg", default: false, rental_id: 2 },
       { filename: "h07.jpg", default: false, rental_id: 2 },
       { filename: "h08.jpg", default: true, rental_id: 3 },
-      { filename: "h09.jpg", default: false, rental_id: 3 }
+      { filename: "h09.jpg", default: false, rental_id: 3 },
+	# Rental ID 4 - 333 Oak 
+      { filename: "333default.png", default: true, rental_id: 4 },
+      { filename: "h07.jpg", default: false, rental_id: 4 },
+      { filename: "h08.jpg", default: false, rental_id: 4 },
+      { filename: "h09.jpg", default: false, rental_id: 4 },	
+	# Rental ID 5 - 442 W 2nd
+      { filename: "442default.png", default: true, rental_id: 5 },
+      { filename: "h07.jpg", default: false, rental_id: 5 },
+      { filename: "h08.jpg", default: false, rental_id: 5 },
+      { filename: "h09.jpg", default: false, rental_id: 5 },
+	# Rental ID 6 - 1149 W 3rd
+      { filename: "1149default.png", default: true, rental_id: 6 },
+      { filename: "h07.jpg", default: false, rental_id: 6 },
+      { filename: "h08.jpg", default: false, rental_id: 6 },
+      { filename: "h09.jpg", default: false, rental_id: 6 },
+	# Rental ID 7 - 617 Brice
+      { filename: "617default.png", default: true, rental_id: 7 },
+      { filename: "h07.jpg", default: false, rental_id: 7 },
+      { filename: "h08.jpg", default: false, rental_id: 7 },
+      { filename: "h09.jpg", default: false, rental_id: 7 },
+	# Rental ID 8 - 1406 W 7th
+      { filename: "1406default.png", default: true, rental_id: 8 },
+      { filename: "h07.jpg", default: false, rental_id: 8 },
+      { filename: "h08.jpg", default: false, rental_id: 8 },
+      { filename: "h09.jpg", default: false, rental_id: 8 },
+	# Rental ID 9 - 521 W 5th
+      { filename: "521default.png", default: true, rental_id: 9 },
+      { filename: "h07.jpg", default: false, rental_id: 9 },
+      { filename: "h08.jpg", default: false, rental_id: 9 },
+      { filename: "h09.jpg", default: false, rental_id: 9 }
+
 ])
