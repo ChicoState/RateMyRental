@@ -76,7 +76,7 @@ function deselect() {
   if(thumbs.length > 0 )
   {
    for(var i = 0; i < thumbs.length; i++) {
-      thumbs[i].style.border = "medium solid red";
+      thumbs[i].style.border = "none";
    }
   }
 }

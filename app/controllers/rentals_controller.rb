@@ -39,7 +39,9 @@ class RentalsController < ApplicationController
         # saving images with paperclip
         if params[:pics]
           params[:pics].each { |pic|
-            @rental.images.create(pic: pic)
+            # XXX this sets all default to true once can figure out 
+            # ajax to return file to be defult remove
+            @rental.images.create(pic: pic, default: true)
           }
         end
 
